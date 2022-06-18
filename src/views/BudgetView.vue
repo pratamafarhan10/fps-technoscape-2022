@@ -4,12 +4,11 @@
         <div class="grid grid-flow-row auto-rows-auto bg-history-blue px-5 py-5 min-h-content text-white gap-4"
             id="riwayat-transaksi">
             <div class="grid grid-cols-2 gap-4">
-                <div class="text-2xl font-bold	">
+                <div>
                     <select class="select w-full bg-transparent border-none max-w-xs">
                         <option class="bg-history-blue">June 2022</option>
                         <option class="bg-history-blue">Mei 2022</option>
                     </select>
-
                 </div>
                 <div class="flex justify-end items-center">
                     <div class="py-2 px-4 bg-white rounded-lg">

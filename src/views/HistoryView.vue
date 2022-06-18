@@ -166,7 +166,12 @@ export default {
                 return response.data.data
             })
 
+            console.log(transaksi);
 
+            // let categorizeTransaction = {}
+            // transaksi.forEach(element => {
+            //     categorizeTransaction[element.date].push(element)
+            // });
             this.$store.dispatch('transaksi/setTransaksi', transaksi)
         },
 

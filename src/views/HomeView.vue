@@ -1,46 +1,80 @@
 <template>
-    <div class="px-5 py-5">
+    <div>
 
-        <!-- Header profil -->
-        <div class="grid grid-cols-10 gap-4">
-            <div class="col-span-8">
-                <div class="grid-flow-row auto-rows-auto">
-                    <div class="text-gray-500">Halo!</div>
-                    <div class="text-xl font-semibold">FPS Team Member 1</div>
+        <!-- history header -->
+        <div class="grid grid-flow-row auto-rows-auto bg-history-blue px-5 py-5 min-h-content text-white gap-4"
+            id="riwayat-transaksi">
+
+            <!-- Header profil -->
+            <div class="grid grid-cols-10 gap-4">
+                <div class="col-span-8">
+                    <select class="select w-full bg-transparent border-none max-w-xs">
+                        <option class="bg-history-blue">June 2022</option>
+                        <option class="bg-history-blue">Mei 2022</option>
+                    </select>
+                </div>
+                <div class="flex items-center">
+                    <font-awesome-icon icon="fa-solid fa-bell" class="w-7 h-7 text-white" />
+                </div>
+                <div class="flex items-center rounded-lg border border-white">
+                    <img src="../assets/pp.png" class="rounded-lg">
                 </div>
             </div>
-            <div class="flex items-center">
-                <font-awesome-icon icon="fa-solid fa-bell" class="w-7 h-7 text-gray-500" />
+            <!-- End Header profil -->
+
+            <!-- pemasukan pengeluaran -->
+            <div class="grid grid-cols-2 mt-5 border border-white rounded-lg bg-history-blue p-3">
+                <div class="border-r border-r-white py-2 px-5">
+                    <div class="grid-flow-row auto-rows-auto">
+                        <div class="flex items-center">
+                            <font-awesome-icon icon="fa-solid fa-arrow-down"
+                                class="mr-2 bg-up-logo-green text-white p-1 rounded-md" />
+                            <span class="text-white">Pemasukan</span>
+                        </div>
+                        <div class="mt-2 text-xl font-bold text-white">Rp. 123.000.000</div>
+                    </div>
+                </div>
+
+                <div class="py-2 px-5">
+                    <div class="grid-flow-row auto-rows-auto">
+                        <div class="flex items-center">
+                            <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket"
+                                class="mr-2 bg-red-500 text-white p-1 rounded-md" />
+                            <span class="text-white">Pengeluaran</span>
+                        </div>
+                        <div class="mt-2 text-xl font-bold text-white">Rp. 450.000</div>
+                    </div>
+                </div>
+
             </div>
-            <div class="flex items-center">
-                <img src="../assets/pp.png" class="rounded-lg">
+            <!-- end pemasukan pengeluaran -->
+
+            <div>
+                <div class="card bg-white">
+                    <div class="card-body">
+                        <div class="grid grid-flow-row auto-rows-auto">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="text-gray-500">Sisa Budget</div>
+                                    <div class="text-black font-bold text-2xl">Rp. 2.550.000</div>
+                                </div>
+                                <div>
+                                    <div class="text-gray-500">Budget Bulanan</div>
+                                    <div class="text-black font-bold text-2xl">Rp. 3.000.000</div>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <progress class="progress progress-error" value="50" max="100"></progress>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- End Header profil -->
-
-        <!-- pemasukan dan pengeluaran -->
-        <div class="grid grid-cols-2 mt-5 border border-gray-200 rounded-lg bg-white">
-            <div class="border-r border-r-gray-200 grid-flow-row auto-rows-auto p-3">
-                <div class="flex items-center">
-                    <font-awesome-icon icon="fa-solid fa-arrow-down"
-                        class="mr-2 bg-up-logo-green text-white p-1 rounded-md" />
-                    <span class="text-gray-500">Pemasukan</span>
-                </div>
-                <div class="mt-2 text-xl font-bold text-black">Rp. 123.000.000</div>
-            </div>
-            <div class="grid-flow-row auto-rows-auto p-3">
-                <div class="flex items-center">
-                    <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket"
-                        class="mr-2 bg-red-500 text-white p-1 rounded-md" />
-                    <span class="text-gray-500">Pengeluaran</span>
-                </div>
-                <div class="mt-2 text-xl font-bold text-black">Rp. 450.000</div>
-            </div>
-        </div>
-        <!-- end pemasukan dan pengeluaran -->
+        <!-- end history header -->
 
         <!-- Bank -->
-        <div class="mt-5">
+        <div class="mt-5 px-5">
             <div class="card bg-sky-800">
                 <div class="card-body">
                     <div class="grid-flow-row auto-rows-auto">
@@ -69,43 +103,43 @@
 
 
         <!-- Transaksi terbaru -->
-        <div class="grid-flow-row auto-rows-auto mt-10">
+        <div class="grid-flow-row auto-rows-auto mt-10 px-5">
             <div class="grid grid-cols-2 gap-4">
                 <div class="text-gray-500 text-xl">Transaksi terbaru</div>
                 <div class="text-history-blue font-bold text-xl text-end">Lihat semua</div>
             </div>
             <div class="mt-4">
                 <!-- card pengeluaran pemasukan -->
-                    <div class="card w-full bg-white shadow-xl border border-gray-300">
-                        <div class="card-body">
+                <div class="card w-full bg-white border border-gray-300">
+                    <div class="card-body">
 
-                            <!-- pengeluaran/pemasukannya -->
-                            <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
-                                <div class="w-14 h-14">
-                                    <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
-                                        <img src="../assets/gopay_logo.png" alt="">
-                                    </div>
+                        <!-- pengeluaran/pemasukannya -->
+                        <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
+                            <div class="w-14 h-14">
+                                <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
+                                    <img src="../assets/gopay_logo.png" alt="">
                                 </div>
-                                <div class="col-span-4 grid grid-flow-row auto-rows">
-                                    <div class="text-lg font-bold text-black">Makan Siang</div>
-                                    <div class="text-gray-400 font-semibold">Food</div>
-                                </div>
-                                <div class="col-span-4 grid grid-flow-row auto-rows text-end">
-                                    <!-- <div class="text-lg font-bold" :class="{
+                            </div>
+                            <div class="col-span-4 grid grid-flow-row auto-rows">
+                                <div class="text-lg font-bold text-black">Makan Siang</div>
+                                <div class="text-gray-400 font-semibold">Food</div>
+                            </div>
+                            <div class="col-span-4 grid grid-flow-row auto-rows text-end">
+                                <!-- <div class="text-lg font-bold" :class="{
                                         'text-red-500': currentTab == 'pengeluaran',
                                         'text-green-500': currentTab == 'pemasukan',
                                     }">
                                         -Rp 25.000
                                     </div> -->
-                                    <div class="text-lg font-bold text-red-500">
-                                        -Rp 25.000
-                                    </div>
-                                    <div class="text-gray-500">18 sept 2019</div>
+                                <div class="text-lg font-bold text-red-500">
+                                    -Rp 25.000
                                 </div>
+                                <div class="text-gray-500">18 sept 2019</div>
                             </div>
-                            <!-- end of pengeluaran/pemasukan -->
                         </div>
+                        <!-- end of pengeluaran/pemasukan -->
                     </div>
+                </div>
                 <!-- end card pengeluaran pemasukan -->
             </div>
         </div>
@@ -124,5 +158,25 @@
 
 .text-history-blue {
     color: #273A7D;
+}
+
+#riwayat-transaksi {
+    background-image: url("../assets/bg\ riwayat\ transaksi.png");
+}
+
+.bg-history-blue {
+    background-color: #273A7D;
+}
+
+.text-history-blue {
+    color: #273A7D;
+}
+
+.text-light-blue {
+    color: #1D2E6C;
+}
+
+.bg-up-logo-green {
+    background-color: #71D4A6;
 }
 </style>
