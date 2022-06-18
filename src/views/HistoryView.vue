@@ -17,7 +17,7 @@
                     Active Total Balance
                 </div>
                 <div class="font-bold text-4xl">
-                    Rp. 450.000
+                    Rp {{convertMoney(balance)}}
                 </div>
             </div>
             <div class="text-xl">
@@ -61,26 +61,68 @@
                             <div class="card-body">
 
                                 <!-- pengeluaran/pemasukannya -->
-                                <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
-                                    <div class="w-14 h-14">
-                                        <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
-                                            <img src="../assets/gopay_logo.png" alt="">
+                                <div v-if="currentTab == 'pengeluaran'">
+                                    <ul>
+                                        <li  v-for="(n,i) in outcome" :key="i">
+                                        <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
+                                            <div class="w-14 h-14">
+                                                <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
+                                                    <img src="../assets/gopay_logo.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-span-4 grid grid-flow-row auto-rows">
+                                                <div class="text-lg font-bold text-black">{{outcome[i].description}}</div>
+                                                <div class="text-gray-400 font-semibold">
+                                                    {{outcome[i].category.classification_group}}
+                                                </div>
+                                            </div>
+                                            <div class="col-span-4 grid grid-flow-row auto-rows text-end">
+                                                <div class="text-lg font-bold" :class="{
+                                                    'text-red-500': currentTab == 'pengeluaran',
+                                                    'text-green-500': currentTab == 'pemasukan',
+                                                }">
+                                                <h1>
+                                                    {{outcome[i].amount}}
+                                                </h1>
+                                                </div>
+                                                <div class="text-gray-500">18 sept 2019</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-span-4 grid grid-flow-row auto-rows">
-                                        <div class="text-lg font-bold text-black">Makan Siang</div>
-                                        <div class="text-gray-400 font-semibold">Food</div>
-                                    </div>
-                                    <div class="col-span-4 grid grid-flow-row auto-rows text-end">
-                                        <div class="text-lg font-bold" :class="{
-                                            'text-red-500': currentTab == 'pengeluaran',
-                                            'text-green-500': currentTab == 'pemasukan',
-                                        }">
-                                            -Rp 25.000
-                                        </div>
-                                        <div class="text-gray-500">18 sept 2019</div>
-                                    </div>
+                                    </li>   
+                                    </ul>
                                 </div>
+                                <!-- if pemasukan -->
+                                <div v-if="currentTab == 'pemasukan'">
+                                    <ul>
+                                        <li  v-for="(n,i) in income" :key="i">
+                                        <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
+                                            <div class="w-14 h-14">
+                                                <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
+                                                    <img src="../assets/gopay_logo.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-span-4 grid grid-flow-row auto-rows">
+                                                <div class="text-lg font-bold text-black">{{income[i].description}}</div>
+                                                <div class="text-gray-400 font-semibold">
+                                                    {{income[i].category.classification_group}}
+                                                </div>
+                                            </div>
+                                            <div class="col-span-4 grid grid-flow-row auto-rows text-end">
+                                                <div class="text-lg font-bold" :class="{
+                                                    'text-red-500': currentTab == 'pengeluaran',
+                                                    'text-green-500': currentTab == 'pemasukan',
+                                                }">
+                                                <h1>
+                                                    {{income[i].amount}}
+                                                </h1>
+                                                </div>
+                                                <div class="text-gray-500">18 sept 2019</div>
+                                            </div>
+                                        </div>
+                                    </li>   
+                                    </ul>
+                                </div>
+                                
                                 <!-- end of pengeluaran/pemasukan -->
                             </div>
                         </div>
@@ -95,11 +137,77 @@
 </template>
 
 <script>
+import axios from 'axios'
+// let url = "https://sandbox.onebrick.io/v1/"
 export default {
     data() {
         return {
             currentTab: 'pengeluaran',
+            income: this.$store.getters['transaksi/income'],
+            outcome: this.$store.getters['transaksi/outcome'],
+            balance: this.$store.getters['balance/balance'],
         }
+    },
+    methods: {
+         async dataTransaction(){
+            let transaksi = await axios.get("https://sandbox.onebrick.io/v1/transaction/list", {
+                headers: {
+                    'Authorization': `Bearer ${await this.getUserAccess()}`,
+                    'Content-Type': 'application/json'
+                },
+                params: {
+                    from: '2021-01-01',
+                    to: '2022-06-15'
+                }
+            }).then(response => {
+                return response.data.data
+            })
+
+            this.$store.dispatch('transaksi/setTransaksi', transaksi)
+        },
+
+        async totalBalance(){
+            let balance = await axios.get("https://sandbox.onebrick.io/v1/account/list", {
+                headers: {
+                    'Authorization': `Bearer ${await this.getUserAccess()}`,
+                    'Content-Type': 'application/json'
+                },
+                params: {
+                    from: '2021-01-01',
+                    to: '2022-06-15'
+                }
+            }).then(response => {
+                return response.data.data
+            })
+            this.$store.dispatch('balance/setBalance', balance)
+        },
+
+        async getUserAccess(){
+            let idToken  = localStorage.getItem('idToken');
+
+            let data =  await axios({
+                method: 'get',
+                url: `https://fps-technoscape-default-rtdb.asia-southeast1.firebasedatabase.app/userToken/id_1/gopay.json?auth=${idToken}`,
+            }).then(response => {
+                return response.data
+            })
+
+            return data
+        },
+
+        convertMoney(money){
+            let moneyConvert = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+            return moneyConvert
+        }
+    },
+    async created(){
+       try{
+            await this.dataTransaction()
+            await this.totalBalance()
+       }
+         catch(e){
+                console.log(e)
+         }
     }
 }
 </script>
