@@ -1,5 +1,7 @@
 <template>
+<div class="bg-slate-100">
   <router-view />
+</div>
 </template>
 
 <script>
@@ -13,7 +15,7 @@ export default {
 
 <style>
 #app {
-  height: 100vh;
+  height: 100%;
   width: 50% !important;
   border-right: 1px solid #ccc;
   border-left: 1px solid #ccc;
