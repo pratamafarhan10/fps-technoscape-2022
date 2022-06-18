@@ -178,14 +178,14 @@ export default {
          async getHistory(){
             await this.getUserAccess()
             await this.$store.dispatch('transaksi/setTransaksi', this.data.gopay)
-            // await this.$store.dispatch('transaksi/setTransaksi', this.data.ovo)
+            await this.$store.dispatch('transaksi/setTransaksi', this.data.ovo)
             await this.$store.dispatch('transaksi/setTransaksi', this.data.tsrf)
             await this.totalBalance()
             this.sortingData()
         },
 
         async totalBalance(){
-            // await this.$store.dispatch('balance/setBalance', this.data.ovo)
+            await this.$store.dispatch('balance/setBalance', this.data.ovo)
             await this.$store.dispatch('balance/setBalance', this.data.gopay);
             await this.$store.dispatch('balance/setBalance', this.data.tsrf)
             this.balance = this.$store.getters['balance/balance']

@@ -31,11 +31,21 @@
                                 class="mr-2 bg-up-logo-green text-white p-1 rounded-md" />
                             <span class="text-white">Pemasukan</span>
                         </div>
-                        <div class="mt-2 text-xl font-bold text-white">Rp. 123.000.000</div>
+                        <div class="mt-2 text-xl font-bold text-white">Rp.{{pemasukan}}</div>
                     </div>
                 </div>
-                <div class="mt-2 text-xl font-bold text-black">Rp. {{pemasukan}}</div>
+                <div class="border-r border-r-white py-2 px-5">
+                    <div class="grid-flow-row auto-rows-auto">
+                        <div class="flex items-center">
+                            <font-awesome-icon icon="fa-solid fa-arrow-down"
+                                class="mr-2 bg-up-logo-green text-white p-1 rounded-md" />
+                            <span class="text-white">Pengeluaran</span>
+                        </div>
+                        <div class="mt-2 text-xl font-bold text-white">Rp. {{pengeluaran}}</div>
+                    </div>
+                </div>
             </div>
+            
             <!-- end pemasukan pengeluaran -->
 
             <div>
@@ -58,8 +68,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-2 text-xl font-bold text-black">Rp. {{pengeluaran}}</div>
-
             </div>
         </div>
         <!-- end history header -->
@@ -192,8 +200,6 @@
                 <!-- end card pengeluaran pemasukan -->
             </div>
         </div>
-
-    </div>
 </template>
 
 <script>
@@ -268,6 +274,7 @@ export default {
 
             return this.data = data
         },
+        
     },
     async created() {
         await this.revenueMoney();
