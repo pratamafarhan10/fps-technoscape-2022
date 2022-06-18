@@ -17,7 +17,7 @@
                     Active Total Balance
                 </div>
                 <div class="font-bold text-4xl">
-                    Rp {{this.balance}}
+                    {{ rupiahFormat(balance) }}
                 </div>
             </div>
             <div class="text-xl">
@@ -48,7 +48,6 @@
             </div>
             <div class="mt-5">
                 <div class="grid grid-flow-row auto-rows-auto">
-
                     <!-- pengeluaran -->
                     <div v-if="currentTab == 'pemasukan'">
                         <div v-for="(val, index) in sortedIncome" :key="index">
@@ -144,6 +143,7 @@
                                         </div>
                                     </div>   
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -192,10 +192,10 @@ export default {
             console.log(this.balance)
         },
 
-        async getUserAccess(){
-            let idToken  = localStorage.getItem('idToken');
+        async getUserAccess() {
+            let idToken = localStorage.getItem('idToken');
 
-            let data =  await axios({
+            let data = await axios({
                 method: 'get',
                 url: `https://fps-technoscape-default-rtdb.asia-southeast1.firebasedatabase.app/userToken/id_1/.json?auth=${idToken}`,
             }).then(response => {
@@ -204,7 +204,6 @@ export default {
 
             return this.data = data
         },
-
         async dataIncome(){
             let data = []
             this.income.forEach(element => {
@@ -255,6 +254,12 @@ export default {
             
             await this.dataOutcome();
         },
+         rupiahFormat(number) {
+            return new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+            }).format(number);
+        },
     },
     async created(){
        try{
@@ -264,7 +269,7 @@ export default {
          catch(e){
                 console.log(e)
          }
-    }
+    },
 }
 </script>
 

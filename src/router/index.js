@@ -6,6 +6,7 @@ import HomeView from "../views/HomeView.vue";
 import HistoryView from "../views/HistoryView.vue";
 import BudgetView from "../views/BudgetView.vue";
 import BudgetTipsView from "../views/BudgetTipsView.vue";
+import BudgetDetailView from "../views/BudgetDetailView.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -46,6 +47,14 @@ const router = createRouter({
       path: "/budgetips",
       name: "budgetips",
       component: BudgetTipsView,
+      meta: {
+        auth: true,
+      },
+    },
+    {
+      path: "/budgetdetails",
+      name: "budget detail",
+      component: BudgetDetailView,
       meta: {
         auth: true,
       },

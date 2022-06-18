@@ -26,7 +26,11 @@ import {
   faCreditCard,
   faWallet,
   faSackDollar,
-  faMoneyBillTransfer
+  faMoneyBillTransfer,
+  faPlus,
+  faBus,
+  faAngleRight,
+  faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -44,7 +48,11 @@ library.add(
   faCreditCard,
   faWallet,
   faSackDollar,
-  faMoneyBillTransfer
+  faMoneyBillTransfer,
+  faPlus,
+  faBus,
+  faAngleRight,
+  faArrowLeft
 );
 
 let app = createApp(App);
