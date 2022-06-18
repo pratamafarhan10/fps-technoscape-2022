@@ -4,6 +4,8 @@ import store from "../store/index.js";
 import LoginView from "../views/LoginView.vue";
 import HomeView from "../views/HomeView.vue";
 import HistoryView from "../views/HistoryView.vue";
+import BudgetView from "../views/BudgetView.vue";
+import BudgetTipsView from "../views/BudgetTipsView.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -32,7 +34,24 @@ const router = createRouter({
         auth: true,
       },
     },
+    {
+      path: "/budget",
+      name: "budget",
+      component: BudgetView,
+      meta: {
+        auth: true,
+      },
+    },
+    {
+      path: "/budgetips",
+      name: "budgetips",
+      component: BudgetTipsView,
+      meta: {
+        auth: true,
+      },
+    },
   ],
+  linkExactActiveClass: "active",
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;

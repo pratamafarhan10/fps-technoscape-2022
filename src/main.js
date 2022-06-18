@@ -5,17 +5,47 @@ import store from "./store/index.js";
 import "./assets/tailwind.css";
 
 /* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from "@fortawesome/fontawesome-svg-core";
 
 /* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
-import { faUserSecret,faBell,faCircle, faUser, faMagnifyingGlass, faArrowUpFromBracket, faSortDown, 
-faMoneyCheck,
-} from '@fortawesome/free-solid-svg-icons'
+import {
+  faUserSecret,
+  faBell,
+  faCircle,
+  faUser,
+  faMagnifyingGlass,
+  faArrowUpFromBracket,
+  faSortDown,
+  faMoneyCheck,
+  faArrowDown,
+  faHouse,
+  faChartColumn,
+  faCreditCard,
+  faWallet,
+  faSackDollar,
+  faMoneyBillTransfer
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faUserSecret, faBell, faCircle, faUser, faMagnifyingGlass, faArrowUpFromBracket, faSortDown, faMoneyCheck);
+library.add(
+  faUserSecret,
+  faBell,
+  faCircle,
+  faUser,
+  faMagnifyingGlass,
+  faArrowUpFromBracket,
+  faSortDown,
+  faMoneyCheck,
+  faArrowDown,
+  faHouse,
+  faChartColumn,
+  faCreditCard,
+  faWallet,
+  faSackDollar,
+  faMoneyBillTransfer
+);
 
 let app = createApp(App);
 

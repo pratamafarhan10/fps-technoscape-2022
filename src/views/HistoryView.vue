@@ -55,6 +55,7 @@
                     </div>
                     <!-- end tanggal pengeluaran/pemasukan -->
 
+                    <!-- card pengeluaran pemasukan -->
                     <div class="mt-4">
                         <div class="card w-full bg-white shadow-xl border border-gray-300">
                             <div class="card-body">
@@ -81,13 +82,11 @@
                                     </div>
                                 </div>
                                 <!-- end of pengeluaran/pemasukan -->
-
-                                
-
                             </div>
                         </div>
-
                     </div>
+                    <!-- end card pengeluaran pemasukan -->
+
                 </div>
             </div>
         </div>
