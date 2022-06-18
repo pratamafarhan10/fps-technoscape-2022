@@ -1,21 +1,12 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <br>
-    <i class="fab fa-medium"></i>
-    <i class="far fa-envelope"></i>
-  </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <script>
 export default {
-  setup() {
-    return {
-      msg: 'Hello Vue!'
-    }
-  },
+  created() {
+    this.$store.dispatch('auth/tryLogin');
+  }
 }
 </script>
 
