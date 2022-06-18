@@ -6,7 +6,12 @@ export default {
     namespaced: true,
     state() {
         return {
-            balance: [],
+            balance: 0,
+            pengeluaran: 0,
+            pemasukan: 0,
+            gopay: 0,
+            ovo: 0,
+            tsrf: 0,
         };
     },
     actions,

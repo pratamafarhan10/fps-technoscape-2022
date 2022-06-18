@@ -17,7 +17,7 @@
                     Active Total Balance
                 </div>
                 <div class="font-bold text-4xl">
-                    Rp {{convertMoney(balance)}}
+                    Rp {{this.balance}}
                 </div>
             </div>
             <div class="text-xl">
@@ -49,81 +49,101 @@
             <div class="mt-5">
                 <div class="grid grid-flow-row auto-rows-auto">
 
-                    <!-- tanggal pengeluaran/pemasukan -->
-                    <div class="text-gray-500 font-semibold">
-                        Hari ini, 18 sept 2019
+                    <!-- pengeluaran -->
+                    <div v-if="currentTab == 'pemasukan'">
+                        <div v-for="(val, index) in sortedIncome" :key="index">
+                        <!-- tanggal pengeluaran/pemasukan -->
+                            <div class="text-gray-500 font-semibold">
+                                {{val.date}}
+                            </div>
+                            <!-- end tanggal pengeluaran/pemasukan -->
+
+                            <!-- card pengeluaran pemasukan -->
+                            <div class="mt-4">
+                                <div class="card w-full bg-white shadow-xl border border-gray-300">
+                                    <div class="card-body">
+                                        <!-- pengeluaran/pemasukannya -->
+                                        <div v-if="currentTab == 'pemasukan'">
+                                            <ul>
+                                                <li  v-for="(n,i) in val.data" :key="i">
+                                                <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
+                                                    <div class="w-14 h-14">
+                                                        <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
+                                                            <img src="../assets/gopay_logo.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-4 grid grid-flow-row auto-rows">
+                                                        <div class="text-lg font-bold text-black">{{n.description}}</div>
+                                                        <div class="text-gray-400 font-semibold">
+                                                            {{n.category.classification_group}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-4 grid grid-flow-row auto-rows text-end">
+                                                        <div class="text-lg font-bold" :class="{
+                                                            'text-red-500': currentTab == 'pengeluaran',
+                                                            'text-green-500': currentTab == 'pemasukan',
+                                                        }">
+                                                        <h1>
+                                                            {{n.amount}}
+                                                        </h1>
+                                                        </div>
+                                                        <div class="text-gray-500">{{n.date}}</div>
+                                                    </div>
+                                                </div>
+                                            </li>   
+                                            </ul>
+                                        </div>
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- end tanggal pengeluaran/pemasukan -->
+                    
+                    <div v-if="currentTab == 'pengeluaran'">
+                        <div v-for="(val, index) in sortedOutcome" :key="index">
+                        <!-- tanggal pengeluaran/pemasukan -->
+                            <div class="text-gray-500 font-semibold">
+                                {{val.date}}
+                            </div>
+                            <!-- end tanggal pengeluaran/pemasukan -->
 
-                    <!-- card pengeluaran pemasukan -->
-                    <div class="mt-4">
-                        <div class="card w-full bg-white shadow-xl border border-gray-300">
-                            <div class="card-body">
-
-                                <!-- pengeluaran/pemasukannya -->
-                                <div v-if="currentTab == 'pengeluaran'">
-                                    <ul>
-                                        <li  v-for="(n,i) in outcome" :key="i">
-                                        <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
-                                            <div class="w-14 h-14">
-                                                <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
-                                                    <img src="../assets/gopay_logo.png" alt="">
+                            <!-- card pengeluaran pemasukan -->
+                            <div class="mt-4">
+                                <div class="card w-full bg-white shadow-xl border border-gray-300">
+                                    <div class="card-body">
+                                        <!-- pengeluaran/pemasukannya -->
+                                        <div v-if="currentTab == 'pengeluaran'">
+                                            <ul>
+                                                <li  v-for="(n,i) in val.data" :key="i">
+                                                <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
+                                                    <div class="w-14 h-14">
+                                                        <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
+                                                            <img src="../assets/gopay_logo.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-4 grid grid-flow-row auto-rows">
+                                                        <div class="text-lg font-bold text-black">{{n.description}}</div>
+                                                        <div class="text-gray-400 font-semibold">
+                                                            {{n.category.classification_group}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-4 grid grid-flow-row auto-rows text-end">
+                                                        <div class="text-lg font-bold" :class="{
+                                                            'text-red-500': currentTab == 'pengeluaran',
+                                                            'text-green-500': currentTab == 'pemasukan',
+                                                        }">
+                                                        <h1>
+                                                            {{n.amount}}
+                                                        </h1>
+                                                        </div>
+                                                        <div class="text-gray-500">{{n.date}}</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-span-4 grid grid-flow-row auto-rows">
-                                                <div class="text-lg font-bold text-black">{{outcome[i].description}}</div>
-                                                <div class="text-gray-400 font-semibold">
-                                                    {{outcome[i].category.classification_group}}
-                                                </div>
-                                            </div>
-                                            <div class="col-span-4 grid grid-flow-row auto-rows text-end">
-                                                <div class="text-lg font-bold" :class="{
-                                                    'text-red-500': currentTab == 'pengeluaran',
-                                                    'text-green-500': currentTab == 'pemasukan',
-                                                }">
-                                                <h1>
-                                                    {{outcome[i].amount}}
-                                                </h1>
-                                                </div>
-                                                <div class="text-gray-500">18 sept 2019</div>
-                                            </div>
+                                            </li>   
+                                            </ul>
                                         </div>
-                                    </li>   
-                                    </ul>
+                                    </div>   
                                 </div>
-                                <!-- if pemasukan -->
-                                <div v-if="currentTab == 'pemasukan'">
-                                    <ul>
-                                        <li  v-for="(n,i) in income" :key="i">
-                                        <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
-                                            <div class="w-14 h-14">
-                                                <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
-                                                    <img src="../assets/gopay_logo.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-span-4 grid grid-flow-row auto-rows">
-                                                <div class="text-lg font-bold text-black">{{income[i].description}}</div>
-                                                <div class="text-gray-400 font-semibold">
-                                                    {{income[i].category.classification_group}}
-                                                </div>
-                                            </div>
-                                            <div class="col-span-4 grid grid-flow-row auto-rows text-end">
-                                                <div class="text-lg font-bold" :class="{
-                                                    'text-red-500': currentTab == 'pengeluaran',
-                                                    'text-green-500': currentTab == 'pemasukan',
-                                                }">
-                                                <h1>
-                                                    {{income[i].amount}}
-                                                </h1>
-                                                </div>
-                                                <div class="text-gray-500">18 sept 2019</div>
-                                            </div>
-                                        </div>
-                                    </li>   
-                                    </ul>
-                                </div>
-                                
-                                <!-- end of pengeluaran/pemasukan -->
                             </div>
                         </div>
                     </div>
@@ -142,44 +162,34 @@ import axios from 'axios'
 export default {
     data() {
         return {
+            // tanggal sekarang
+            currentDate: "",
+            data: [],
             currentTab: 'pengeluaran',
-            income: this.$store.getters['transaksi/income'],
-            outcome: this.$store.getters['transaksi/outcome'],
-            balance: this.$store.getters['balance/balance'],
+            income: [],
+            sortedIncome: [],
+            sortedOutcome:  [],
+            dateCategory: [],
+            outcome: "",
+            balance: "",
         }
     },
     methods: {
-         async dataTransaction(){
-            let transaksi = await axios.get("https://sandbox.onebrick.io/v1/transaction/list", {
-                headers: {
-                    'Authorization': `Bearer ${await this.getUserAccess()}`,
-                    'Content-Type': 'application/json'
-                },
-                params: {
-                    from: '2021-01-01',
-                    to: '2022-06-15'
-                }
-            }).then(response => {
-                return response.data.data
-            })
-
-            this.$store.dispatch('transaksi/setTransaksi', transaksi)
+         async getHistory(){
+            await this.getUserAccess()
+            await this.$store.dispatch('transaksi/setTransaksi', this.data.gopay)
+            // await this.$store.dispatch('transaksi/setTransaksi', this.data.ovo)
+            await this.$store.dispatch('transaksi/setTransaksi', this.data.tsrf)
+            await this.totalBalance()
+            this.sortingData()
         },
 
         async totalBalance(){
-            let balance = await axios.get("https://sandbox.onebrick.io/v1/account/list", {
-                headers: {
-                    'Authorization': `Bearer ${await this.getUserAccess()}`,
-                    'Content-Type': 'application/json'
-                },
-                params: {
-                    from: '2021-01-01',
-                    to: '2022-06-15'
-                }
-            }).then(response => {
-                return response.data.data
-            })
-            this.$store.dispatch('balance/setBalance', balance)
+            // await this.$store.dispatch('balance/setBalance', this.data.ovo)
+            await this.$store.dispatch('balance/setBalance', this.data.gopay);
+            await this.$store.dispatch('balance/setBalance', this.data.tsrf)
+            this.balance = this.$store.getters['balance/balance']
+            console.log(this.balance)
         },
 
         async getUserAccess(){
@@ -187,23 +197,69 @@ export default {
 
             let data =  await axios({
                 method: 'get',
-                url: `https://fps-technoscape-default-rtdb.asia-southeast1.firebasedatabase.app/userToken/id_1/gopay.json?auth=${idToken}`,
+                url: `https://fps-technoscape-default-rtdb.asia-southeast1.firebasedatabase.app/userToken/id_1/.json?auth=${idToken}`,
             }).then(response => {
                 return response.data
             })
 
-            return data
+            return this.data = data
         },
 
-        convertMoney: function(money){
-            let moneyConvert = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-            return moneyConvert
-        }
+        async dataIncome(){
+            let data = []
+            this.income.forEach(element => {
+                if(data[element.date] == undefined){
+                    data[element.date] = []
+               }
+                data[element.date].push(element)
+            });
+            
+            let databaru = []
+            for(let key in data){
+                let data2 = {
+                    date: key,
+                    data: data[key]
+                }
+                databaru.push(data2)
+            }
+
+            this.sortedIncome = databaru
+        },
+        async dataOutcome(){
+            let data = []
+            this.outcome.forEach(element => {
+                if(data[element.date] == undefined){
+                    data[element.date] = []
+               }
+                data[element.date].push(element)
+            });
+            
+            let databaru = []
+            for(let key in data){
+                let data2 = {
+                    date: key,
+                    data: data[key]
+                }
+                databaru.push(data2)
+            }
+
+            this.sortedOutcome = databaru
+            console.log(this.sortedOutcome)
+        },
+        async sortingData(){
+            this.income = this.$store.getters['transaksi/income']
+            
+            await this.dataIncome();
+
+            this.outcome= this.$store.getters['transaksi/outcome']
+            
+            await this.dataOutcome();
+        },
     },
     async created(){
        try{
-            await this.dataTransaction()
-            await this.totalBalance()
+            await this.getHistory()
+            // urutkan data income sesuai tanggal
        }
          catch(e){
                 console.log(e)

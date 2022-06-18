@@ -1,6 +1,6 @@
 export default {
     income(state) {
-        return state.income;
+       return state.income
     },
     outcome(state) {
         return state.outcome;
