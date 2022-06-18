@@ -195,7 +195,7 @@ export default {
             return data
         },
 
-        convertMoney(money){
+        convertMoney: function(money){
             let moneyConvert = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
             return moneyConvert
         }
