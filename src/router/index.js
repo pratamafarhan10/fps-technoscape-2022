@@ -50,6 +50,11 @@ const router = createRouter({
         auth: true,
       },
     },
+    {
+      path: "/connectbrick",
+      name: "connectbrick",
+      component: () => import("../views/ConnectBrickView.vue"),
+    }
   ],
   linkExactActiveClass: "active",
   scrollBehavior(to, from, savedPosition) {
