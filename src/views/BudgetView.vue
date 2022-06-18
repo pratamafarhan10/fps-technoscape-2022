@@ -82,7 +82,7 @@
                                 <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
-                                <router-link to="/">
+                                <router-link :to="{ name: 'budget detail'}">
                                     Lihat Detail
                                     <font-awesome-icon icon="fa-solid fa-angle-right" />
                                 </router-link>

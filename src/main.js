@@ -29,7 +29,8 @@ import {
   faMoneyBillTransfer,
   faPlus,
   faBus,
-  faAngleRight
+  faAngleRight,
+  faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -50,7 +51,8 @@ library.add(
   faMoneyBillTransfer,
   faPlus,
   faBus,
-  faAngleRight
+  faAngleRight,
+  faArrowLeft
 );
 
 let app = createApp(App);
