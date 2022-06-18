@@ -53,12 +53,14 @@
                     <div class="text-gray-500 font-semibold">
                         Hari ini, 18 sept 2019
                     </div>
+                    <!-- end tanggal pengeluaran/pemasukan -->
+
                     <div class="mt-4">
-                        <div class="card w-full bg-base-100 shadow-xl border border-gray-300">
+                        <div class="card w-full bg-white shadow-xl border border-gray-300">
                             <div class="card-body">
 
                                 <!-- pengeluaran/pemasukannya -->
-                                <div class="grid grid-cols-9 border-b border-b-gray-300 py-2">
+                                <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
                                     <div class="w-14 h-14">
                                         <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
                                             <img src="../assets/gopay_logo.png" alt="">
@@ -78,6 +80,10 @@
                                         <div class="text-gray-500">18 sept 2019</div>
                                     </div>
                                 </div>
+                                <!-- end of pengeluaran/pemasukan -->
+
+                                
+
                             </div>
                         </div>
 

@@ -1,7 +1,11 @@
 <template>
-<div class="bg-slate-100">
-  <router-view />
-</div>
+  <div class="grid grid-cols-3 h-screen">
+    <div>01</div>
+    <div class="bg-slate-50">
+      <router-view />
+    </div>
+    <div>03</div>
+  </div>
 </template>
 
 <script>
@@ -13,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<!-- <style>
 #app {
   height: 100%;
   width: 50% !important;
@@ -38,4 +42,4 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
-</style>
+</style> -->
