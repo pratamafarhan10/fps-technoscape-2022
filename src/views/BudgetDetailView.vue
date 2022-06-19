@@ -62,7 +62,7 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">Terpakai</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">-{{rupiahFormat(this.terpakai)}}</div>
                             </div>
                         </div>
                         <div class="p-8" :class="{
@@ -94,7 +94,7 @@
         <div class="mt-5 px-5">
 
             <!-- pengeluaran pemasukan -->
-            <div class="grid grid-flow-row auto-rows-auto mt-3">
+            <div v-if="transaksi.length > 0" class="grid grid-flow-row auto-rows-auto mt-3">
 
                 <!-- tanggal pengeluaran/pemasukan -->
                 <div class="text-gray-500 font-semibold">
@@ -135,6 +135,16 @@
 
                 </div>
             </div>
+            <!-- pengeluaran pemasukan -->
+            <div v-else class="grid grid-flow-row auto-rows-auto mt-3">
+
+                <!-- tanggal pengeluaran/pemasukan -->
+                <div class="text-black font-bold text-center mt-10 text-3xl">
+                    Belum Ada Data Transaksi
+                    <font-awesome-icon icon="fa-solid fa-money-bill-1-wave" />
+                </div>
+                <!-- end tanggal pengeluaran/pemasukan -->
+            </div>
             <!-- end pengeluaran pemasukan -->
         </div>
     </div>
@@ -147,6 +157,7 @@ export default {
         return {
             currentTab: 'pengeluaran',
             transaksi:[],
+            terpakai: 0,
             budget: {
                 category: {
                     transportation: 0,
@@ -191,6 +202,7 @@ export default {
                     }
                 }
                 console.log(this.transaksi);
+                this.hitungTerpakai(this.categoryName);
             } catch (error) {
                 console.log(error.message);
             }
@@ -201,6 +213,15 @@ export default {
                 currency: "IDR",
             }).format(number);
         },
+        hitungTerpakai(category) {
+            for(let i = 0; i < this.transaksi.length; i++) {
+                if(this.transaksi[i].category.classification_group == category) {
+                    this.terpakai += this.transaksi[i].amount
+                } 
+            }
+
+            console.log(this.terpakai);
+        }
     },
     created() {
         this.getBudget();
