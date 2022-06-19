@@ -30,23 +30,23 @@
             "to": 3000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 50,
             "shopping": 20
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -85,23 +85,23 @@
             "to": 1000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 30,
             "shopping": 40
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -142,23 +142,23 @@
             "to": 3000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 50,
             "shopping": 20
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -197,23 +197,23 @@
             "to": 1000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 30,
             "shopping": 40
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -254,23 +254,23 @@
             "to": 3000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 50,
             "shopping": 20
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -309,23 +309,23 @@
             "to": 1000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 30,
             "shopping": 40
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -369,23 +369,23 @@
             "to": 3000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 50,
             "shopping": 20
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -424,23 +424,23 @@
             "to": 1000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 30,
             "shopping": 40
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -481,23 +481,23 @@
             "to": 3000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 50,
             "shopping": 20
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -536,23 +536,23 @@
             "to": 1000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 30,
             "shopping": 40
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -593,23 +593,23 @@
             "to": 3000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 50,
             "shopping": 20
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -648,23 +648,23 @@
             "to": 1000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 30,
             "shopping": 40
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -708,23 +708,23 @@
             "to": 3000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 50,
             "shopping": 20
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -763,23 +763,23 @@
             "to": 1000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 30,
             "shopping": 40
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -820,23 +820,23 @@
             "to": 3000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 50,
             "shopping": 20
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -875,23 +875,23 @@
             "to": 1000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 30,
             "shopping": 40
           },
           "recommendation": {
-            "entertainment": {
-              "entertainment_1": {
-                "name": "Museum",
+            "transportation": {
+              "transportation_1": {
+                "name": "Ojek Online",
                 "price": 60000
               },
-              "entertainment_2": {
-                "name": "Taman",
-                "price": 0
+              "transportation_2": {
+                "name": "Bus",
+                "price": 2500
               },
-              "entertainment_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+              "transportation_3": {
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -932,23 +932,23 @@
             "to": 3000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 50,
             "shopping": 20
           },
           "recommendation": {
-            "entertainment": {
+            "transportation": {
               "ent_1": {
-                "name": "Museum",
+                "name": "Ojek Online",
                 "price": 60000
               },
               "ent_2": {
-                "name": "Taman",
-                "price": 0
+                "name": "Bus",
+                "price": 2500
               },
               "ent_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -987,23 +987,23 @@
             "to": 1000000
           },
           "category_percentage": {
-            "entertainment": 30,
+            "transportation": 30,
             "food_and_dining": 30,
             "shopping": 40
           },
           "recommendation": {
-            "entertainment": {
+            "transportation": {
               "ent_1": {
-                "name": "Museum",
+                "name": "Ojek Online",
                 "price": 60000
               },
               "ent_2": {
-                "name": "Taman",
-                "price": 0
+                "name": "Bus",
+                "price": 2500
               },
               "ent_3": {
-                "name": "Gedung Sate",
-                "price": 20000
+                "name": "Angkot",
+                "price": 4000
               }
             },
             "food_and_dining": {
@@ -1041,7 +1041,7 @@
     },
     "id_1": {
       "category": {
-        "entertainment": 2000000,
+        "transportation": 2000000,
         "food_and_dining": 5000000,
         "health_and_fitnes": 1000000,
         "investments": 1000000,
@@ -1053,7 +1053,7 @@
     },
     "id_2": {
       "category": {
-        "entertainment": 1000000,
+        "transportation": 1000000,
         "food_&_dining": 2000000,
         "shopping": 1000000
       },
@@ -1078,7 +1078,7 @@
       "category": {
         "deposit": 450000,
         "education": 2000000,
-        "entertainment": 300000,
+        "transportation": 300000,
         "food_and_dining": 2500000,
         "health_and_fitnes": 700000,
         "shopping": 120000,

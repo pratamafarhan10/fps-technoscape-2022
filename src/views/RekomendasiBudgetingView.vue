@@ -100,15 +100,15 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.transportation.transportation_1.name : budgetTemplate.singgah.recommendation.transportation.transportation_1.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.transportation.transportation_1.price : budgetTemplate.singgah.recommendation.transportation.transportation_1.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.transportation.transportation_1.price) : rupiahFormat(budgetTemplate.singgah.recommendation.transportation.transportation_1.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.transportation.transportation_2.name : budgetTemplate.singgah.recommendation.transportation.transportation_2.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.transportation.transportation_2.price : budgetTemplate.singgah.recommendation.transportation.transportation_2.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.transportation.transportation_2.price) : rupiahFormat(budgetTemplate.singgah.recommendation.transportation.transportation_2.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.transportation.transportation_3.name : budgetTemplate.singgah.recommendation.transportation.transportation_3.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.transportation.transportation_3.price : budgetTemplate.singgah.recommendation.transportation.transportation_3.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.transportation.transportation_3.price) : rupiahFormat(budgetTemplate.singgah.recommendation.transportation.transportation_3.price) }}</div>
                             </div>
                         </div>
                     </div>
@@ -146,15 +146,15 @@
                             </div>
                              <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.food_and_dining.fad_1.name : budgetTemplate.singgah.recommendation.food_and_dining.fad_1.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.food_and_dining.fad_1.price : budgetTemplate.singgah.recommendation.food_and_dining.fad_1.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.food_and_dining.fad_1.price) : rupiahFormat(budgetTemplate.singgah.recommendation.food_and_dining.fad_1.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.food_and_dining.fad_2.name : budgetTemplate.singgah.recommendation.food_and_dining.fad_2.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.food_and_dining.fad_2.price : budgetTemplate.singgah.recommendation.food_and_dining.fad_2.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.food_and_dining.fad_2.price) : rupiahFormat(budgetTemplate.singgah.recommendation.food_and_dining.fad_2.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.food_and_dining.fad_3.name : budgetTemplate.singgah.recommendation.food_and_dining.fad_3.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.food_and_dining.fad_3.price : budgetTemplate.singgah.recommendation.food_and_dining.fad_3.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.food_and_dining.fad_3.price) : rupiahFormat(budgetTemplate.singgah.recommendation.food_and_dining.fad_3.price) }}</div>
                             </div>
                         </div>
                     </div>
@@ -193,15 +193,15 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.education.education_1.name : budgetTemplate.singgah.recommendation.education.education_1.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.education.education_1.price : budgetTemplate.singgah.recommendation.education.education_1.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.education.education_1.price) : rupiahFormat(budgetTemplate.singgah.recommendation.education.education_1.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.education.education_2.name : budgetTemplate.singgah.recommendation.education.education_2.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.education.education_2.price : budgetTemplate.singgah.recommendation.education.education_2.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.education.education_2.price) : rupiahFormat(budgetTemplate.singgah.recommendation.education.education_2.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.education.education_3.name : budgetTemplate.singgah.recommendation.education.education_3.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.education.education_3.price : budgetTemplate.singgah.recommendation.education.education_3.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.education.education_3.price) : rupiahFormat(budgetTemplate.singgah.recommendation.education.education_3.price) }}</div>
                             </div>
                         </div>
                     </div>
@@ -240,15 +240,15 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.shopping.shopping_1.name : budgetTemplate.singgah.recommendation.shopping.shopping_1.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.shopping.shopping_1.price : budgetTemplate.singgah.recommendation.shopping.shopping_1.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.shopping.shopping_1.price) : rupiahFormat(budgetTemplate.singgah.recommendation.shopping.shopping_1.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.shopping.shopping_2.name : budgetTemplate.singgah.recommendation.shopping.shopping_2.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.shopping.shopping_2.price : budgetTemplate.singgah.recommendation.shopping.shopping_2.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.shopping.shopping_2.price) : rupiahFormat(budgetTemplate.singgah.recommendation.shopping.shopping_2.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.shopping.shopping_3.name : budgetTemplate.singgah.recommendation.shopping.shopping_3.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.shopping.shopping_3.price : budgetTemplate.singgah.recommendation.shopping.shopping_3.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.shopping.shopping_3.price) : rupiahFormat(budgetTemplate.singgah.recommendation.shopping.shopping_3.price) }}</div>
                             </div>
                         </div>
                     </div>
@@ -287,15 +287,15 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.health_and_fitness.health_and_fitness_1.name : budgetTemplate.singgah.recommendation.health_and_fitness.health_and_fitness_1.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.health_and_fitness.health_and_fitness_1.price : budgetTemplate.singgah.recommendation.health_and_fitness.health_and_fitness_1.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.health_and_fitness.health_and_fitness_1.price) : rupiahFormat(budgetTemplate.singgah.recommendation.health_and_fitness.health_and_fitness_1.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.health_and_fitness.health_and_fitness_2.name : budgetTemplate.singgah.recommendation.health_and_fitness.health_and_fitness_2.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.health_and_fitness.health_and_fitness_2.price : budgetTemplate.singgah.recommendation.health_and_fitness.health_and_fitness_2.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.health_and_fitness.health_and_fitness_2.price) : rupiahFormat(budgetTemplate.singgah.recommendation.health_and_fitness.health_and_fitness_2.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.health_and_fitness.health_and_fitness_2.name : budgetTemplate.singgah.recommendation.health_and_fitness.health_and_fitness_2.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.health_and_fitness.health_and_fitness_2.price : budgetTemplate.singgah.recommendation.health_and_fitness.health_and_fitness_2.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.health_and_fitness.health_and_fitness_2.price) : rupiahFormat(budgetTemplate.singgah.recommendation.health_and_fitness.health_and_fitness_2.price) }}</div>
                             </div>
                         </div>
                     </div>
@@ -333,15 +333,15 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.deposit.deposit_1.name : budgetTemplate.singgah.recommendation.deposit.deposit_1.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.deposit.deposit_1.price : budgetTemplate.singgah.recommendation.deposit.deposit_1.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.deposit.deposit_1.price) : rupiahFormat(budgetTemplate.singgah.recommendation.deposit.deposit_1.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.deposit.deposit_2.name : budgetTemplate.singgah.recommendation.deposit.deposit_2.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.deposit.deposit_2.price : budgetTemplate.singgah.recommendation.deposit.deposit_2.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.deposit.deposit_2.price) : rupiahFormat(budgetTemplate.singgah.recommendation.deposit.deposit_2.price) }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.deposit.deposit_3.name : budgetTemplate.singgah.recommendation.deposit.deposit_3.name }}</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? budgetTemplate.menetap.recommendation.deposit.deposit_3.price : budgetTemplate.singgah.recommendation.deposit.deposit_3.price }}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{ currentTab == 'budget menetap' ? rupiahFormat(budgetTemplate.menetap.recommendation.deposit.deposit_3.price) : rupiahFormat(budgetTemplate.singgah.recommendation.deposit.deposit_3.price) }}</div>
                             </div>
                         </div>
                     </div>

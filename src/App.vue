@@ -1,10 +1,11 @@
 <template>
   <div class="grid grid-cols-3 h-screen">
-    <div>01</div>
-    <div class="bg-slate-50 flex flex-col justify-between">
-      <router-view />
-      <!-- <div class="bg-slate-100"> -->
-      <div class="bg-slate-100 mt-5">
+    <div></div>
+    <div class="bg-slate-50 flex flex-col justify-between h-screen">
+      <div class="overflow-y-auto">
+        <router-view />
+      </div>
+      <div class="bg-slate-100">
         <ul class="menu menu-horizontal p-2 w-full justify-between">
           <li>
             <router-link :to="{ name: 'home' }">
@@ -40,9 +41,8 @@
           </li>
         </ul>
       </div>
-      <!-- </div> -->
     </div>
-    <div>03</div>
+    <div></div>
   </div>
 </template>
 
