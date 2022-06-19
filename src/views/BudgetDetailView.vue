@@ -25,7 +25,7 @@
                             'bg-sky-100': category == 'education',
                             'bg-orange-100': category == 'shopping',
                             'bg-indigo-100': category == 'health_and_fitness',
-                            'bg-teal-100': category == 'investment',
+                            'bg-teal-100': category == 'deposit',
                         }">
                             <div class="col-span-2 flex justify-center">
                                 <div class="w-16 h-16 bg-blue-200 flex justify-center items-center rounded-lg" :class="{
@@ -34,7 +34,7 @@
                                     'bg-sky-200': category == 'education',
                                     'bg-orange-200': category == 'shopping',
                                     'bg-indigo-200': category == 'health_and_fitness',
-                                    'bg-teal-200': category == 'investment',
+                                    'bg-teal-200': category == 'deposit',
                                 }">
                                     <font-awesome-icon icon="fa-solid fa-bus" class="w-8 h-8 text-blue-800" :class="{
                                         'text-blue-800': category == 'transportation',
@@ -42,7 +42,7 @@
                                         'text-sky-800': category == 'education',
                                         'text-orange-800': category == 'shopping',
                                         'text-indigo-800': category == 'health_and_fitness',
-                                        'text-teal-800': category == 'investment',
+                                        'text-teal-800': category == 'deposit',
                                     }" />
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             'bg-sky-100': category == 'education',
                             'bg-orange-100': category == 'shopping',
                             'bg-indigo-100': category == 'health_and_fitness',
-                            'bg-teal-100': category == 'investment',
+                            'bg-teal-100': category == 'deposit',
                         }">
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="text-lg text-black font-medium">Sisa Budget</div>
@@ -80,7 +80,7 @@
                                     'text-sky-800': category == 'education',
                                     'text-orange-800': category == 'shopping',
                                     'text-indigo-800': category == 'health_and_fitness',
-                                    'text-teal-800': category == 'investment',
+                                    'text-teal-800': category == 'deposit',
                                 }">Rp. 200.000</div>
                             </div>
                         </div>
@@ -106,28 +106,27 @@
                         <div class="card-body">
 
                             <!-- pengeluaran/pemasukannya -->
-                            <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
+                            <div v-for="(n,i) in transaksi" :key="i" class="grid grid-cols-9 border-b border-b-gray-200 py-2">
                                 <div class="w-14 h-14">
                                     <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
                                         <img src="../assets/gopay_logo.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-span-4 grid grid-flow-row auto-rows">
-                                    <div class="text-lg font-bold text-black">Makan Siang</div>
-                                    <div class="text-gray-400 font-semibold">Food</div>
+                                    <div class="text-lg font-bold text-black">{{n.description}}</div>
+                                    <div class="text-gray-400 font-semibold">{{n.category.classification_group}}</div>
                                 </div>
                                 <div class="col-span-4 grid grid-flow-row auto-rows text-end">
                                     <div class="text-lg font-bold" :class="{
                                         'text-red-500': currentTab == 'pengeluaran',
                                         'text-green-500': currentTab == 'pemasukan',
                                     }">
-                                        -Rp 25.000
+                                        -{{ rupiahFormat(n.amount) }}
                                     </div>
                                     <div class="text-gray-500">18 sept 2019</div>
                                 </div>
                             </div>
                             <!-- end of pengeluaran/pemasukan -->
-
 
 
                         </div>
@@ -145,6 +144,8 @@ export default {
     props: ['category'],
     data() {
         return {
+            currentTab: 'pengeluaran',
+            transaksi:[],
             budget: {
                 category: {
                     transportation: 0,
@@ -152,7 +153,7 @@ export default {
                     education: 0,
                     shopping: 0,
                     health_and_fitness: 0,
-                    investment: 0,
+                    deposit: 0,
                 },
                 budget: 0
             }
@@ -160,11 +161,14 @@ export default {
     },
     computed: {
         categoryName() {
-            if (this.category == 'transportation' || this.category == 'education' | this.category == 'shopping' | this.category == 'investment') {
+            if (this.category == 'transportation' || this.category == 'education' | this.category == 'deposit') {
                 return this.category
             } else if (this.category == 'food_and_dining') {
-                return 'Food & Dining'
-            } else {
+                return 'food & dining'
+            }else if (this.category == 'shopping') {
+                return 'Shopping'
+            }
+            else {
                 return 'Health & Fitness'
             }
         }
@@ -174,6 +178,18 @@ export default {
             try {
                 await this.$store.dispatch('budget/getBudget');
                 this.budget = this.$store.getters['budget/getBudget'];
+                await this.$store.dispatch('userAccses/getUserAccess');
+                this.dataAccsess =  await this.$store.getters['userAccses/userAccsess'];            
+                await this.$store.dispatch('transaksi/setTransaksi', this.dataAccsess)
+                // this.transaksi = 
+                let dataTransaksi = await this.$store.getters['transaksi/outcome'];
+                console.log(dataTransaksi);
+                for(let i = 0; i < dataTransaksi.length; i++) {
+                    if(dataTransaksi[i].category.classification_group == this.categoryName) {
+                        this.transaksi.push(dataTransaksi[i]);
+                    }
+                }
+                console.log(this.transaksi);
             } catch (error) {
                 console.log(error.message);
             }
@@ -188,6 +204,7 @@ export default {
     created() {
         console.log(this.category);
         this.getBudget();
+        console.log(this.categoryName);
     }
 }
 

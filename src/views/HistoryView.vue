@@ -194,7 +194,6 @@ export default {
         async totalBalance() {
             await this.$store.dispatch('balance/setBalance', this.dataAccsess)
             this.balance = this.$store.getters['balance/balance']
-            console.log(this.balance)
         },
 
         async dataIncome() {
@@ -215,7 +214,10 @@ export default {
                 databaru.push(data2)
             }
 
-            this.sortedIncome = databaru
+            this.sortedIncome = databaru.sort((a, b) => {
+                return new Date(a.date) - new Date(b.date)
+            }).reverse()
+
         },
         async dataOutcome() {
             let data = []
@@ -235,8 +237,12 @@ export default {
                 databaru.push(data2)
             }
 
-            this.sortedOutcome = databaru
-            console.log(this.sortedOutcome)
+            console.log(databaru[0].date)
+
+            this.sortedOutcome = databaru.sort((a, b) => {
+                return new Date(a.date) - new Date(b.date)
+            }).reverse()
+
         },
         async sortingData() {
 

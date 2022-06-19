@@ -46,4 +46,28 @@ export default {
       console.log(error.message);
     }
   },
+  async getBudgetTemplate(context, { kota, tipe }) {
+    
+    let idToken = localStorage.getItem("idToken");
+
+    let url = `https://fps-technoscape-default-rtdb.asia-southeast1.firebasedatabase.app/template_budgeting.json?auth=${idToken}`;
+
+    if (kota && tipe) {
+      url = `https://fps-technoscape-default-rtdb.asia-southeast1.firebasedatabase.app/template_budgeting/${kota}/${tipe}.json?auth=${idToken}`
+    }
+
+    console.log(url);
+
+    try {
+      let response = await axios({
+        method: "GET",
+        url: url
+      });
+
+      let template = response.data;
+      context.commit("setTemplate", { template });
+    } catch (error) {
+      console.log(error.message);
+    }
+  },
 };

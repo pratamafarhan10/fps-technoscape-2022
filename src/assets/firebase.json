@@ -32,19 +32,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 50,
-            "shoping": 20
+            "shopping": 20
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -63,7 +63,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -87,19 +87,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 30,
-            "shoping": 40
+            "shopping": 40
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -118,7 +118,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -144,19 +144,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 50,
-            "shoping": 20
+            "shopping": 20
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -175,7 +175,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -199,19 +199,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 30,
-            "shoping": 40
+            "shopping": 40
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -230,7 +230,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -256,19 +256,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 50,
-            "shoping": 20
+            "shopping": 20
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -287,7 +287,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -311,19 +311,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 30,
-            "shoping": 40
+            "shopping": 40
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -342,7 +342,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -371,19 +371,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 50,
-            "shoping": 20
+            "shopping": 20
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -402,7 +402,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -426,19 +426,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 30,
-            "shoping": 40
+            "shopping": 40
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -457,7 +457,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -483,19 +483,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 50,
-            "shoping": 20
+            "shopping": 20
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -514,7 +514,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -538,19 +538,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 30,
-            "shoping": 40
+            "shopping": 40
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -569,7 +569,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -595,19 +595,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 50,
-            "shoping": 20
+            "shopping": 20
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -626,7 +626,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -650,19 +650,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 30,
-            "shoping": 40
+            "shopping": 40
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -681,7 +681,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -710,19 +710,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 50,
-            "shoping": 20
+            "shopping": 20
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -741,7 +741,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -765,19 +765,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 30,
-            "shoping": 40
+            "shopping": 40
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -796,7 +796,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -822,19 +822,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 50,
-            "shoping": 20
+            "shopping": 20
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -853,7 +853,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -877,19 +877,19 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 30,
-            "shoping": 40
+            "shopping": 40
           },
           "recommendation": {
             "entertainment": {
-              "ent_1": {
+              "entertainment_1": {
                 "name": "Museum",
                 "price": 60000
               },
-              "ent_2": {
+              "entertainment_2": {
                 "name": "Taman",
                 "price": 0
               },
-              "ent_3": {
+              "entertainment_3": {
                 "name": "Gedung Sate",
                 "price": 20000
               }
@@ -908,7 +908,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -934,7 +934,7 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 50,
-            "shoping": 20
+            "shopping": 20
           },
           "recommendation": {
             "entertainment": {
@@ -965,7 +965,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -989,7 +989,7 @@
           "category_percentage": {
             "entertainment": 30,
             "food_and_dining": 30,
-            "shoping": 40
+            "shopping": 40
           },
           "recommendation": {
             "entertainment": {
@@ -1020,7 +1020,7 @@
                 "price": 18000
               }
             },
-            "shoping": {
+            "shopping": {
               "shopping_1": {
                 "name": "Thrifting",
                 "price": 50000
@@ -1055,7 +1055,7 @@
       "category": {
         "entertainment": 1000000,
         "food_&_dining": 2000000,
-        "shoping": 1000000
+        "shopping": 1000000
       },
       "gaji": 4000000,
       "kota": "surabaya",

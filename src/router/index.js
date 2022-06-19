@@ -80,9 +80,10 @@ const router = createRouter({
       },
     },
     {
-      path: "/rekomendasibudget",
+      path: "/rekomendasibudget/:kota/:tipe/:budget",
       name: "rekomendasi budget",
       component: RekomendasiBudgetingView,
+      props: true,
       meta: {
         auth: true,
       },

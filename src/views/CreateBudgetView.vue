@@ -133,7 +133,7 @@
                         </div>
                     </div>
 
-                    <!-- investing -->
+                    <!-- deposit -->
                     <div class="mt-5">
                         <div class="p-4 rounded-lg bg-teal-100 grid grid-cols-10">
                             <div class="col-span-2 flex justify-center">
@@ -142,10 +142,10 @@
                                 </div>
                             </div>
                             <div class="col-span-6 flex items-center text-2xl font-semibold">
-                                Investment
+                                Deposit
                             </div>
                             <div class="col-span-2 flex items-center justify-end">
-                                <input type="checkbox" class="checkbox bg-white" id="investment" value="investment"
+                                <input type="checkbox" class="checkbox bg-white" id="deposit" value="deposit"
                                     v-model="category" />
                             </div>
                         </div>
@@ -307,8 +307,8 @@
                             </div>
                         </div>
 
-                        <!-- investing -->
-                        <div class="card bg-white border border-gray-300 mt-5" v-if="category.includes('investment')">
+                        <!-- deposit -->
+                        <div class="card bg-white border border-gray-300 mt-5" v-if="category.includes('deposit')">
                             <div class="card-body">
                                 <div class="grid grid-flow-row auto-rows-auto">
                                     <div class="grid grid-cols-10">
@@ -320,14 +320,14 @@
                                             </div>
                                         </div>
                                         <div class="col-span-8 flex items-center text-2xl font-semibold">
-                                            Investment
+                                            Deposit
                                         </div>
                                     </div>
                                     <div class="form-control mt-3">
                                         <label class="input-group">
                                             <span>Rp</span>
                                             <input type="number" placeholder="Tulis nominal..."
-                                                class="input input-bordered w-full" v-model="budget.investment" />
+                                                class="input input-bordered w-full" v-model="budget.deposit" />
                                         </label>
                                     </div>
                                 </div>
@@ -408,7 +408,7 @@ export default {
                 education: 0,
                 shopping: 0,
                 health_and_fitness: 0,
-                investment: 0,
+                deposit: 0,
             },
             is_every_month: true,
             isLoading: false,
@@ -416,7 +416,7 @@ export default {
     },
     computed: {
         isTotalBudgetMoreThanNominal() {
-            let total = this.budget.transportation + this.budget.food_and_dining + this.budget.education + this.budget.shopping + this.budget.health_and_fitness + this.budget.investment;
+            let total = this.budget.transportation + this.budget.food_and_dining + this.budget.education + this.budget.shopping + this.budget.health_and_fitness + this.budget.deposit;
 
             if (total > this.budget_nominal) {
                 return true;
