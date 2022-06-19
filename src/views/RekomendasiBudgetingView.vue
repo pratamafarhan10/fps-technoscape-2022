@@ -64,8 +64,16 @@
         <div class="px-5 mt-5">
             <div class="card bg-white">
                 <div class="card-body">
-                    <div class="text-gray-400 text-lg">Budget Bulanan</div>
-                    <div class="text-2xl text-black font-bold">{{ rupiahFormat(budget) }}</div>
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <div class="text-gray-400 text-lg">Budget Bulanan</div>
+                            <div class="text-2xl text-black font-bold">{{ rupiahFormat(budget) }}</div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <button class="btn bg-history-blue text-white hover:bg-blue-800 w-full">Pakai Template Ini</button>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
 

@@ -2,7 +2,7 @@
   <div class="grid grid-cols-3 h-screen">
     <div></div>
     <div class="bg-slate-50 flex flex-col justify-between h-screen">
-      <div class="overflow-y-auto">
+      <div class="overflow-y-auto mb-4">
         <router-view />
       </div>
       <div class="bg-slate-100">

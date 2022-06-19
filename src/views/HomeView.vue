@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card bg-violet-900">
+            <div class="card bg-violet-900 mt-4">
                 <div class="card-body">
                     <div class="grid-flow-row auto-rows-auto">
                         <div class="grid-flow-row auto-rows-auto">
@@ -128,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card bg-green-800">
+            <div class="card bg-green-800 mt-4">
                 <div class="card-body">
                     <div class="grid-flow-row auto-rows-auto">
                         <div class="grid-flow-row auto-rows-auto">
@@ -165,7 +165,7 @@
             </div>
             <div class="mt-4">
                 <!-- card pengeluaran pemasukan -->
-                <div class="card w-full bg-white shadow-xl border border-gray-300">
+                <div class="card w-full bg-white border border-gray-300">
                     <div class="card-body">
 
                         <!-- pengeluaran/pemasukannya -->
