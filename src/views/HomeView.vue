@@ -31,22 +31,21 @@
                                 class="mr-2 bg-up-logo-green text-white p-1 rounded-md" />
                             <span class="text-white">Pemasukan</span>
                         </div>
-                        <div class="mt-2 text-xl font-bold text-white">Rp. 123.000.000</div>
+                        <div class="mt-2 text-xl font-bold text-white">Rp.{{pemasukan}}</div>
                     </div>
                 </div>
-
-                <div class="py-2 px-5">
+                <div class="border-r border-r-white py-2 px-5">
                     <div class="grid-flow-row auto-rows-auto">
                         <div class="flex items-center">
-                            <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket"
-                                class="mr-2 bg-red-500 text-white p-1 rounded-md" />
+                            <font-awesome-icon icon="fa-solid fa-arrow-down"
+                                class="mr-2 bg-up-logo-green text-white p-1 rounded-md" />
                             <span class="text-white">Pengeluaran</span>
                         </div>
-                        <div class="mt-2 text-xl font-bold text-white">Rp. 450.000</div>
+                        <div class="mt-2 text-xl font-bold text-white">Rp. {{pengeluaran}}</div>
                     </div>
                 </div>
-
             </div>
+            
             <!-- end pemasukan pengeluaran -->
 
             <div>
@@ -79,12 +78,58 @@
                 <div class="card-body">
                     <div class="grid-flow-row auto-rows-auto">
                         <div class="grid-flow-row auto-rows-auto">
-                            <div class="text-lg text-white font-semibold">Balance</div>
-                            <div class="text-white">FPS Team (081312341234)</div>
+                            <div class="text-lg text-white font-semibold">Balance Gopay</div>
+                            <div class="text-white">{{gopay.balance.accountHolder}}</div>
                         </div>
                         <div class="grid grid-cols-5 gap-4 mt-8">
                             <div class="col-span-3 grid-flow-row auto-rows-auto">
-                                <div class="text-2xl text-white font-bold">Rp. 20.000.000</div>
+                                <div class="text-2xl text-white font-bold">Rp. {{gopay.balance.balances.available}}</div>
+                                <div class="text-white mt-3 text-sm">
+                                    <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket"
+                                        class="mr-2 bg-up-logo-green p-1 rounded-md" />
+                                    <span>2% dari bulan lalu</span>
+                                </div>
+                            </div>
+                            <div class="col-span-2 flex items-end">
+                                <img src="../assets/gopay_full.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-sky-800">
+                <div class="card-body">
+                    <div class="grid-flow-row auto-rows-auto">
+                        <div class="grid-flow-row auto-rows-auto">
+                            <div class="text-lg text-white font-semibold">Balance Ovo</div>
+                            <div class="text-white">{{ovo.balance.accountHolder}}</div>
+                        </div>
+                        <div class="grid grid-cols-5 gap-4 mt-8">
+                            <div class="col-span-3 grid-flow-row auto-rows-auto">
+                                <div class="text-2xl text-white font-bold">Rp. {{ovo.balance.balances.available}}</div>
+                                <div class="text-white mt-3 text-sm">
+                                    <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket"
+                                        class="mr-2 bg-up-logo-green p-1 rounded-md" />
+                                    <span>2% dari bulan lalu</span>
+                                </div>
+                            </div>
+                            <div class="col-span-2 flex items-end">
+                                <img src="../assets/gopay_full.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-sky-800">
+                <div class="card-body">
+                    <div class="grid-flow-row auto-rows-auto">
+                        <div class="grid-flow-row auto-rows-auto">
+                            <div class="text-lg text-white font-semibold">Balance  Tsrf</div>
+                            <div class="text-white">{{tsrf.balance.accountHolder}}</div>
+                        </div>
+                        <div class="grid grid-cols-5 gap-4 mt-8">
+                            <div class="col-span-3 grid-flow-row auto-rows-auto">
+                                <div class="text-2xl text-white font-bold">Rp. {{tsrf.balance.balances.available}}</div>
                                 <div class="text-white mt-3 text-sm">
                                     <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket"
                                         class="mr-2 bg-up-logo-green p-1 rounded-md" />
@@ -110,29 +155,41 @@
             </div>
             <div class="mt-4">
                 <!-- card pengeluaran pemasukan -->
-                <div class="card w-full bg-white border border-gray-300">
-                    <div class="card-body">
+                    <div class="card w-full bg-white shadow-xl border border-gray-300">
+                        <div class="card-body">
 
-                        <!-- pengeluaran/pemasukannya -->
-                        <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
-                            <div class="w-14 h-14">
-                                <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
-                                    <img src="../assets/gopay_logo.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-span-4 grid grid-flow-row auto-rows">
-                                <div class="text-lg font-bold text-black">Makan Siang</div>
-                                <div class="text-gray-400 font-semibold">Food</div>
-                            </div>
-                            <div class="col-span-4 grid grid-flow-row auto-rows text-end">
-                                <!-- <div class="text-lg font-bold" :class="{
-                                        'text-red-500': currentTab == 'pengeluaran',
-                                        'text-green-500': currentTab == 'pemasukan',
-                                    }">
-                                        -Rp 25.000
-                                    </div> -->
-                                <div class="text-lg font-bold text-red-500">
-                                    -Rp 25.000
+                            <!-- pengeluaran/pemasukannya -->
+                            <div v-for="(n,i) in dataAktivitasTransaksi" :key="i">
+                                <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
+                                    <div class="w-14 h-14">
+                                        <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
+                                            <img src="../assets/gopay_logo.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 grid grid-flow-row auto-rows">
+                                        <div class="text-lg font-bold text-black">{{n.description}}</div>
+                                        <div class="text-gray-400 font-semibold">{{n.category.classification_group}}</div>
+                                    </div>
+                                    <div class="col-span-4 grid grid-flow-row auto-rows text-end">
+                                        <!-- <div class="text-lg font-bold" :class="{
+                                            'text-red-500': currentTab == 'pengeluaran',
+                                            'text-green-500': currentTab == 'pemasukan',
+                                        }">
+                                            -Rp 25.000
+                                        </div> -->
+                                        <div class="text-lg font-bold" :class="{
+                                            'text-red-500': n.direction == 'out',
+                                            'text-green-500': n.direction == 'in',
+                                        }">
+                                        <h1 v-if="n.direction == 'out'">
+                                            -{{n.amount}}
+                                        </h1>
+                                        <h1 v-if="n.direction == 'in'">
+                                            +{{n.amount}}
+                                        </h1>
+                                        </div>
+                                        <div class="text-gray-500">{{n.date}}</div>
+                                    </div>
                                 </div>
                                 <div class="text-gray-500">18 sept 2019</div>
                             </div>
@@ -143,9 +200,70 @@
                 <!-- end card pengeluaran pemasukan -->
             </div>
         </div>
-
-    </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            dataAccsess:[],
+            dataPemasukan: "",
+            pemasukan: 0,
+            dataPengeluaran: "",
+            pengeluaran: 0,
+            dataAktivitasTransaksi: [],
+            gopay: "",
+            ovo: '',
+            tsrf: "",
+        }
+    },methods: {
+        async revenueMoney() {
+            await this.$store.dispatch('userAccses/getUserAccess');
+            this.dataAccsess =  await this.$store.getters['userAccses/userAccsess'];            
+            await this.$store.dispatch('transaksi/setTransaksi', this.dataAccsess)
+            await this.balanceWallet()
+            this.dataPengeluaran = await this.$store.getters['transaksi/outcome']
+            this.dataPemasukan = await this.$store.getters['transaksi/income']
+            this.aktivitasTransaksi()
+            this.pemasukan = await this.hitung(this.dataPemasukan);
+            this.pengeluaran = await this.hitung(this.dataPengeluaran);
+            // await this.hitung(this.dataPemasukan, this.pengeluaran);
+        },
+        async aktivitasTransaksi() {
+            await this.dataPemasukan.forEach(element => {
+                this.dataAktivitasTransaksi.push(element)
+            });
+
+            await this.dataPengeluaran.forEach(element => {
+                this.dataAktivitasTransaksi.push(element)
+            });
+
+            this.dataAktivitasTransaksi = this.dataAktivitasTransaksi.sort((a,b) => {
+                return new Date(a.date) - new Date(b.date)
+            })
+        },
+        async balanceWallet() {
+            await this.$store.dispatch('balance/getTsrf', this.dataAccsess.tsrf)
+            this.tsrf = await this.$store.getters['balance/tsrf']
+            await this.$store.dispatch('balance/getGopay', this.dataAccsess.gopay)
+            this.gopay = await this.$store.getters['balance/gopay']
+            await this.$store.dispatch('balance/getOvo', this.dataAccsess.ovo)
+            this.ovo = await this.$store.getters['balance/ovo']
+        },
+        async hitung(data) {
+            let total = 0;
+            data.forEach(element => {
+                element.amount = parseInt(element.amount)
+                total += element.amount
+            });
+            return total
+        }     
+    },
+    async created() {
+        await this.revenueMoney();
+    }
+}
+</script>
 
 <style scoped>
 .bg-up-logo-green {

@@ -49,6 +49,11 @@
 <script>
 
 export default {
+  data: function () {
+    return {
+      dataAccsess: []
+    }
+  },
   created() {
     this.$store.dispatch('auth/tryLogin');
   }

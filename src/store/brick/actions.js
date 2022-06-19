@@ -64,6 +64,7 @@ export default  {
 
     async otpGopay(context,actionPayload){
         const dataUser = this.state.brick;
+        console.log(dataUser)
 
         axios({
             method: 'post',
