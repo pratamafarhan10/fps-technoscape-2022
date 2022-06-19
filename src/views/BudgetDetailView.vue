@@ -107,30 +107,27 @@
                         <div class="card-body">
 
                             <!-- pengeluaran/pemasukannya -->
-                            <div class="grid grid-cols-9 border-b border-b-gray-200 py-2">
+                            <div v-for="(n,i) in transaksi" :key="i" class="grid grid-cols-9 border-b border-b-gray-200 py-2">
                                 <div class="w-14 h-14">
                                     <div class="bg-blue-200 rounded-lg p-2 flex justify-center">
                                         <img src="../assets/gopay_logo.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-span-4 grid grid-flow-row auto-rows">
-                                    <div class="text-lg font-bold text-black">Makan Siang</div>
-                                    <div class="text-gray-400 font-semibold">Food</div>
+                                    <div class="text-lg font-bold text-black">{{n.description}}</div>
+                                    <div class="text-gray-400 font-semibold">{{n.category.classification_group}}</div>
                                 </div>
                                 <div class="col-span-4 grid grid-flow-row auto-rows text-end">
                                     <div class="text-lg font-bold" :class="{
                                         'text-red-500': currentTab == 'pengeluaran',
                                         'text-green-500': currentTab == 'pemasukan',
                                     }">
-                                        -Rp 25.000
+                                        -{{ rupiahFormat(n.amount) }}
                                     </div>
                                     <div class="text-gray-500">18 sept 2019</div>
                                 </div>
                             </div>
                             <!-- end of pengeluaran/pemasukan -->
-                            <div>
-                                {{transaksi}}
-                            </div>
 
 
                         </div>
@@ -149,7 +146,7 @@ export default {
     data() {
         return {
             currentTab: 'pengeluaran',
-            transaksi: null,
+            transaksi:[],
             budget: {
                 category: {
                     transportation: 0,
@@ -165,11 +162,14 @@ export default {
     },
     computed: {
         categoryName() {
-            if (this.category == 'transportation' || this.category == 'education' | this.category == 'shopping' | this.category == 'investment') {
+            if (this.category == 'transportation' || this.category == 'education' | this.category == 'deposit') {
                 return this.category
             } else if (this.category == 'food_and_dining') {
-                return 'Food & Dining'
-            } else {
+                return 'food & dining'
+            }else if (this.category == 'shopping') {
+                return 'Shopping'
+            }
+            else {
                 return 'Health & Fitness'
             }
         }
@@ -179,6 +179,18 @@ export default {
             try {
                 await this.$store.dispatch('budget/getBudget');
                 this.budget = this.$store.getters['budget/getBudget'];
+                await this.$store.dispatch('userAccses/getUserAccess');
+                this.dataAccsess =  await this.$store.getters['userAccses/userAccsess'];            
+                await this.$store.dispatch('transaksi/setTransaksi', this.dataAccsess)
+                // this.transaksi = 
+                let dataTransaksi = await this.$store.getters['transaksi/outcome'];
+                console.log(dataTransaksi);
+                for(let i = 0; i < dataTransaksi.length; i++) {
+                    if(dataTransaksi[i].category.classification_group == this.categoryName) {
+                        this.transaksi.push(dataTransaksi[i]);
+                    }
+                }
+                console.log(this.transaksi);
             } catch (error) {
                 console.log(error.message);
             }
@@ -192,7 +204,7 @@ export default {
     },
     created() {
         this.getBudget();
-        console.log(this.category);
+        console.log(this.categoryName);
     }
 }
 

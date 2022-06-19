@@ -23,7 +23,7 @@
                     Sisa Total Budget
                 </div>
                 <div class="font-bold text-4xl">
-                    Rp. 450.000
+                   {{rupiahFormat(sisaBudget())}}
                 </div>
             </div>
             <div>
@@ -33,7 +33,7 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <div class="text-gray-500">Pengeluaran</div>
-                                    <div class="text-black font-bold text-2xl">Rp. 2.550.000</div>
+                                    <div class="text-black font-bold text-2xl">{{rupiahFormat(totalPengeluaran())}}</div>
                                 </div>
                                 <div>
                                     <div class="text-gray-500">Budget Bulanan</div>
@@ -163,6 +163,7 @@
                                 <div class="text-end text-gray-500">Sisa budget</div>
                                 <div class="text-end text-xl font-bold">Rp. 200.000</div>
                             </div>
+
                         </div>
                         <div class="p-8">
                             <div class="grid grid-cols-2 gap-4">
@@ -173,7 +174,7 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">Terpakai</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">- {{rupiahFormat(transaksi.category.education)}}</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
                                 <router-link :to="{ name: 'budget detail', params: { category: 'education' } }">
@@ -206,7 +207,7 @@
                             </div>
                             <div class="col-span-4">
                                 <div class="text-end text-gray-500">Sisa budget</div>
-                                <div class="text-end text-xl font-bold">Rp. 200.000</div>
+                                <div class="text-end text-xl font-bold">{{rupiahFormat(budget.category.shopping -  transaksi.category.shopping)}}</div>
                             </div>
                         </div>
                         <div class="p-8">
@@ -218,7 +219,7 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">Terpakai</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">-{{rupiahFormat(transaksi.category.shopping)}}</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
                                 <router-link :to="{ name: 'budget detail', params: { category: 'shopping' } }">
@@ -277,7 +278,7 @@
             </div>
 
             <!-- investing -->
-            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.investment !== 0">
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.deposit !== 0">
                 <div class="card-body p-0">
                     <div class="grid grid-flow-row auto-rows-auto">
                         <div class="bg-teal-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
@@ -287,7 +288,7 @@
                                 </div>
                             </div>
                             <div class="col-span-4">
-                                <div class="text-xl font-bold">Investment</div>
+                                <div class="text-xl font-bold">Deposit</div>
                                 <div>
                                     <progress class="progress progress-primary" value="50" max="100"></progress>
 
@@ -295,22 +296,22 @@
                             </div>
                             <div class="col-span-4">
                                 <div class="text-end text-gray-500">Sisa budget</div>
-                                <div class="text-end text-xl font-bold">Rp. 200.000</div>
+                                <div class="text-end text-xl font-bold">{{rupiahFormat(budget.category.deposit - transaksi.category.deposit )}}</div>
                             </div>
                         </div>
                         <div class="p-8">
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="text-lg text-gray-500">Total Budget</div>
                                 <div class="text-lg text-gray-500 text-end font-semibold">{{
-                                        rupiahFormat(budget.category.investment)
+                                        rupiahFormat(budget.category.deposit)
                                 }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">Terpakai</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">-{{ rupiahFormat(transaksi.category.deposit)}}</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
-                                <router-link :to="{ name: 'budget detail', params: { category: 'investment' } }">
+                                <router-link :to="{ name: 'budget detail', params: { category: 'deposit' } }">
                                     Lihat Detail
                                     <font-awesome-icon icon="fa-solid fa-angle-right" />
                                 </router-link>
@@ -334,7 +335,7 @@ export default {
                     education: 0,
                     shopping: 0,
                     health_and_fitness: 0,
-                    investment: 0,
+                    deposit: 0,
                 },
                 budget: 0
             },
@@ -345,16 +346,8 @@ export default {
                     education: 0,
                     shopping: 0,
                     health_and_fitness: 0,
-                    investment: 0,
+                    deposit: 0,
                 },
-            },
-            outcome: {
-                transportation: [],
-                food_and_dining: [],
-                education: [],
-                shopping: [],
-                health_and_fitness: [],
-                investment: [],
             },
             dataAccsess: []
         }
@@ -380,12 +373,15 @@ export default {
                     for(let x in this.transaksi.category) {
                         if(x == "food_and_dining") {
                             x = "food & dining";
+                        }else if(x == "shopping") {
+                            x = "Shopping";
                         }
-                        if(x == dataTransaksi[i].category.classification_group) {
+                        if(dataTransaksi[i].category.classification_group == x){
                             if(x == "food & dining") {
                                 x = "food_and_dining";
+                            }else if(x == "Shopping") {
+                                x = "shopping";
                             }
-                            this.outcome[x].push(dataTransaksi[i]);
                             this.transaksi.category[x] += dataTransaksi[i].amount;
                         }
                     }
@@ -394,6 +390,20 @@ export default {
             catch (error) {
                 console.log(error.message);
             }
+        },
+        totalPengeluaran(){
+            let total =  0;
+            for (let x in this.transaksi.category) {
+                total += this.transaksi.category[x];
+            }
+            return total;
+        },
+        sisaBudget(){
+            let total =  0;
+            for (let x in this.budget.category) {
+                total += this.budget.category[x];
+            }
+            return total - this.totalPengeluaran();
         },
         rupiahFormat(number) {
             return new Intl.NumberFormat("id-ID", {

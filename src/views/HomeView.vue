@@ -59,7 +59,7 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <div class="text-gray-500">Sisa Budget</div>
-                                    <div class="text-black font-bold text-2xl">Rp. 2.550.000</div>
+                                    <div class="text-black font-bold text-2xl"> {{rupiahFormat(sisaBudget())}}</div>
                                 </div>
                                 <div>
                                     <div class="text-gray-500">Budget Bulanan</div>
@@ -238,7 +238,17 @@ export default {
                     investment: 0,
                 },
                 budget: 0
-            }
+            },
+            transaksi: {
+                category: {
+                    transportation: 0,
+                    food_and_dining: 0,
+                    education: 0,
+                    shopping: 0,
+                    health_and_fitness: 0,
+                    deposit: 0,
+                },
+            },
         }
     }, methods: {
         async revenueMoney() {
@@ -252,6 +262,28 @@ export default {
             this.pemasukan = await this.hitung(this.dataPemasukan);
             this.pengeluaran = await this.hitung(this.dataPengeluaran);
             // await this.hitung(this.dataPemasukan, this.pengeluaran);
+            await this.$store.dispatch('userAccses/getUserAccess');
+                this.dataAccsess =  await this.$store.getters['userAccses/userAccsess'];            
+                await this.$store.dispatch('transaksi/setTransaksi', this.dataAccsess)
+                // this.transaksi = 
+                let dataTransaksi = await this.$store.getters['transaksi/outcome'];
+                for(let i = 0; i < dataTransaksi.length; i++) {
+                    for(let x in this.transaksi.category) {
+                        if(x == "food_and_dining") {
+                            x = "food & dining";
+                        }else if(x == "shopping") {
+                            x = "Shopping";
+                        }
+                        if(dataTransaksi[i].category.classification_group == x){
+                            if(x == "food & dining") {
+                                x = "food_and_dining";
+                            }else if(x == "Shopping") {
+                                x = "shopping";
+                            }
+                            this.transaksi.category[x] += dataTransaksi[i].amount;
+                        }
+                    }
+                }
         },
         async aktivitasTransaksi() {
             await this.dataPemasukan.forEach(element => {
@@ -264,7 +296,8 @@ export default {
 
             this.dataAktivitasTransaksi = this.dataAktivitasTransaksi.sort((a, b) => {
                 return new Date(a.date) - new Date(b.date)
-            }).slice(0, 5)
+            }).reverse().slice(0, 5)
+
         },
         async balanceWallet() {
             await this.$store.dispatch('balance/getTsrf', this.dataAccsess.tsrf)
@@ -299,6 +332,20 @@ export default {
                 currency: "IDR",
             }).format(number);
         },
+                totalPengeluaran(){
+            let total =  0;
+            for (let x in this.transaksi.category) {
+                total += this.transaksi.category[x];
+            }
+            return total;
+        },
+        sisaBudget(){
+            let total =  0;
+            for (let x in this.budget.category) {
+                total += this.budget.category[x];
+            }
+            return total - this.totalPengeluaran();
+        }
     },
     async created() {
         this.isLoading = true;
