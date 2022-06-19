@@ -87,7 +87,7 @@
                                 <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
-                                <router-link :to="{ name: 'budget detail' }">
+                                <router-link :to="{ name: 'budget detail', params: { category: 'transportation' } }">
                                     Lihat Detail
                                     <font-awesome-icon icon="fa-solid fa-angle-right" />
                                 </router-link>
@@ -131,7 +131,7 @@
                                 <div class="text-lg text-gray-500 text-end font-semibold">{{rupiahFormat(transaksi.category.food_and_dining)}}</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
-                                <router-link :to="{ name: 'budget detail' }">
+                                <router-link :to="{ name: 'budget detail', params: { category: 'food_and_dining' } }">
                                     Lihat Detail
                                     <font-awesome-icon icon="fa-solid fa-angle-right" />
                                 </router-link>
@@ -176,7 +176,7 @@
                                 <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
-                                <router-link :to="{ name: 'budget detail' }">
+                                <router-link :to="{ name: 'budget detail', params: { category: 'education' } }">
                                     Lihat Detail
                                     <font-awesome-icon icon="fa-solid fa-angle-right" />
                                 </router-link>
@@ -221,7 +221,7 @@
                                 <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
-                                <router-link :to="{ name: 'budget detail' }">
+                                <router-link :to="{ name: 'budget detail', params: { category: 'shopping' } }">
                                     Lihat Detail
                                     <font-awesome-icon icon="fa-solid fa-angle-right" />
                                 </router-link>
@@ -266,7 +266,7 @@
                                 <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
-                                <router-link :to="{ name: 'budget detail' }">
+                                <router-link :to="{ name: 'budget detail', params: { category: 'health_and_fitness' } }">
                                     Lihat Detail
                                     <font-awesome-icon icon="fa-solid fa-angle-right" />
                                 </router-link>
@@ -310,7 +310,7 @@
                                 <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
-                                <router-link :to="{ name: 'budget detail' }">
+                                <router-link :to="{ name: 'budget detail', params: { category: 'investment' } }">
                                     Lihat Detail
                                     <font-awesome-icon icon="fa-solid fa-angle-right" />
                                 </router-link>

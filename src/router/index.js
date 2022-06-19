@@ -53,9 +53,10 @@ const router = createRouter({
       },
     },
     {
-      path: "/budgetdetails",
+      path: "/budget/:category/details",
       name: "budget detail",
       component: BudgetDetailView,
+      props: true,
       meta: {
         auth: true,
       },
