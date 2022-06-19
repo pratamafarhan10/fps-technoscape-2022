@@ -70,7 +70,7 @@
                             <div class="text-2xl text-black font-bold">{{ rupiahFormat(budget) }}</div>
                         </div>
                         <div class="flex justify-center items-center">
-                            <button class="btn bg-history-blue text-white hover:bg-blue-800 w-full">Pakai Template Ini</button>
+                            <button class="btn bg-history-blue text-white hover:bg-blue-800 w-full" @click="applyTemplate">Pakai Template Ini</button>
                         </div>
                     </div>
                     
@@ -517,6 +517,31 @@ export default {
                 console.log(error.message);
             }
         },
+        async applyTemplate(){
+            try{
+                const ctgry = {
+                    transportation: this.currentTab == 'budget menetap' ? this.budgetTemplate.menetap.category_percentage.transportation / 100 * this.budget : this.budgetTemplate.singgah.category_percentage.transportation / 100 * this.budget,
+                    food_and_dining: this.currentTab == 'budget menetap' ? this.budgetTemplate.menetap.category_percentage.food_and_dining / 100 * this.budget : this.budgetTemplate.singgah.category_percentage.food_and_dining / 100 * this.budget,
+                    education: this.currentTab == 'budget menetap' ? this.budgetTemplate.menetap.category_percentage.education / 100 * this.budget : this.budgetTemplate.singgah.category_percentage.education / 100 * this.budget,
+                    shopping: this.currentTab == 'budget menetap' ? this.budgetTemplate.menetap.category_percentage.shopping / 100 * this.budget : this.budgetTemplate.singgah.category_percentage.shopping / 100 * this.budget,
+                    health_and_fitness: this.currentTab == 'budget menetap' ? this.budgetTemplate.menetap.category_percentage.health_and_fitness / 100 * this.budget : this.budgetTemplate.singgah.category_percentage.health_and_fitness / 100 * this.budget,
+                    deposit: this.currentTab == 'budget menetap' ? this.budgetTemplate.menetap.category_percentage.deposit / 100 * this.budget : this.budgetTemplate.singgah.category_percentage.deposit / 100 * this.budget,
+                }
+
+                let dateObj = new Date();
+                let year = dateObj.getUTCFullYear();
+                let month = dateObj.getUTCMonth() + 1
+               await this.$store.dispatch('budget/createBudget', {
+                    budget_nominal: this.budget,
+                    category: ctgry,
+                    kota: this.kota,
+                    is_every_month: true,
+                    bulan: `${year}-${month}`,
+               }) 
+            }catch(error){
+                error.message
+            }
+        },  
         rupiahFormat(number) {
             return new Intl.NumberFormat("id-ID", {
                 style: "currency",
