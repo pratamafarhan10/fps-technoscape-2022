@@ -2,15 +2,15 @@
 # Findad (Financial on Hand)
 ## create, find, and know financial budgeting
 
-Aplikasi berbasis financial ini merupaka sebuah aplikasi yang dapat membantu mengelola pengeluaran e-wallet anda
-Hanya dengan aplikasi ini anda bisa memantau keseluruhan data di e-wallet anda
-Untuk saat ini kami telah menyediakan 3 platform e-wallet yang bisa anda hubungkan
-Platform e-wallet yang tersedia untuk saat ini adalah Gopay, Ovo, dan Mock
-Tidak hanya mengatur dan mengelola keuangan anda
-Kami menghadirkan sebuah inovasi terobosan terbaru
-Kami menghadirkan fitur template budgeting untuk membantu anda yang tidak ahli mengatur keuangan
-Anda hanya menekan tombol sesuai keadaaan anda
-Misalnya sebagai anak kost, mapan secara financial, para pensiunan, bahkan hanya sekedar ingin menetap sementara di sebuah kota
+Aplikasi berbasis financial ini merupaka sebuah aplikasi yang dapat membantu mengelola pengeluaran e-wallet anda.
+Hanya dengan aplikasi ini anda bisa memantau keseluruhan data di e-wallet anda.
+Untuk saat ini kami telah menyediakan 3 platform e-wallet yang bisa anda hubungkan.
+Platform e-wallet yang tersedia untuk saat ini adalah Gopay, Ovo, dan Mock.
+Tidak hanya mengatur dan mengelola keuangan anda.
+Kami menghadirkan sebuah inovasi terobosan terbaru.
+Kami menghadirkan fitur template budgeting untuk membantu anda yang tidak ahli mengatur keuangan.
+Anda hanya menekan tombol sesuai keadaaan anda.
+Misalnya sebagai anak kost, mapan secara financial, para pensiunan, bahkan hanya sekedar ingin menetap sementara di sebuah kota.
 
 # Tech Stack
 ## 1. Vue Js
