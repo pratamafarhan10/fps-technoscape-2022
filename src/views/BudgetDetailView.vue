@@ -37,14 +37,15 @@
                                     'bg-indigo-200': category == 'health_and_fitness',
                                     'bg-teal-200': category == 'investment',
                                 }">
-                                    <font-awesome-icon icon="fa-solid fa-bus" class="w-8 h-8 text-blue-800" :class="{
+                                    <font-awesome-icon icon="fa-solid fa-bowl-food" 
+                                        class="w-8 h-8 text-blue-800" :class="{
                                         'text-blue-800': category == 'transportation',
                                         'text-green-800': category == 'food_and_dining',
                                         'text-sky-800': category == 'education',
                                         'text-orange-800': category == 'shopping',
                                         'text-indigo-800': category == 'health_and_fitness',
                                         'text-teal-800': category == 'investment',
-                                    }" />
+                                    }"   />
                                 </div>
                             </div>
                             <div class="col-span-8">
@@ -82,7 +83,7 @@
                                     'text-orange-800': category == 'shopping',
                                     'text-indigo-800': category == 'health_and_fitness',
                                     'text-teal-800': category == 'investment',
-                                }">Rp. 200.000</div>
+                                }">{{rupiahFormat(budget.category[category] - this.terpakai)}}</div>
                             </div>
                         </div>
                     </div>

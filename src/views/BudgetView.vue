@@ -419,7 +419,6 @@ export default {
             if(b == 0) {
                 return 100;
             }
-            console.log(100-((b/a)*100));
             return (100-((b/a)*100));
 
         }

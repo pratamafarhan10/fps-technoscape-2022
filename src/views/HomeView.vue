@@ -10,9 +10,9 @@
             id="riwayat-transaksi">
 
             <!-- Header profil -->
-            <div class="grid grid-cols-10 gap-4">
-                <div class="col-span-8">
-                    <select class="select w-full bg-transparent border-none max-w-xs">
+            <div class="grid grid-cols-10 gap-4 ">
+                <div class="col-span-8  ">
+                    <select class="select w-full bg-transparent max-w-xs border-solid border-2 border-sky-400">
                         <option class="bg-history-blue">June 2022</option>
                         <option class="bg-history-blue">Mei 2022</option>
                     </select>
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="mt-2">
-                                <progress class="progress progress-error" value="50" max="100"></progress>
+                                <progress class="progress progress-error" :value="progressBar()" max="100"></progress>
                             </div>
                         </div>
                     </div>
@@ -228,6 +228,7 @@ export default {
             ovo: '',
             tsrf: "",
             isLoading: false,
+            sisa: 0,
             budget: {
                 category: {
                     transportation: 0,
@@ -344,7 +345,13 @@ export default {
             for (let x in this.budget.category) {
                 total += this.budget.category[x];
             }
+            this.sisa = total - this.totalPengeluaran();
             return total - this.totalPengeluaran();
+        },
+        progressBar(){
+            let b = this.budget.budget
+            let a = this.sisa
+            return (((b/a)*100)-100);
         }
     },
     async created() {

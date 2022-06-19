@@ -97,7 +97,6 @@ export default {
     }
 
     form{
-        z-index: 10 !important;
         padding-top: 30px;
     }
 
@@ -133,7 +132,6 @@ export default {
     }
 
     .gelombang{
-        position: relative;
         margin-top: -120px;
     }
 
