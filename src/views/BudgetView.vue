@@ -11,9 +11,11 @@
                     </select>
                 </div>
                 <div class="flex justify-end items-center">
-                    <div class="py-2 px-4 bg-white rounded-lg">
-                        <font-awesome-icon icon="fa-solid fa-plus" class="text-black" />
-                    </div>
+                    <router-link :to="{ name: 'create budget' }">
+                        <div class="py-2 px-4 bg-white rounded-lg">
+                            <font-awesome-icon icon="fa-solid fa-plus" class="text-black" />
+                        </div>
+                    </router-link>
                 </div>
             </div>
             <div class="grid grid-flow-row auto-rows-auto">
@@ -81,7 +83,7 @@
                                 <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
-                                <router-link :to="{ name: 'budget detail'}">
+                                <router-link :to="{ name: 'budget detail' }">
                                     Lihat Detail
                                     <font-awesome-icon icon="fa-solid fa-angle-right" />
                                 </router-link>
@@ -93,6 +95,10 @@
         </div>
     </div>
 </template>
+
+<script>
+
+</script>
 
 <style scoped>
 #riwayat-transaksi {

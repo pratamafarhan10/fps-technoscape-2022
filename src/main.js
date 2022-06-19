@@ -30,7 +30,13 @@ import {
   faPlus,
   faBus,
   faAngleRight,
-  faArrowLeft
+  faArrowLeft,
+  faX,
+  faBowlFood,
+  faBuildingColumns,
+  faBagShopping,
+  faTemperatureEmpty,
+  faCircleExclamation
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -52,7 +58,13 @@ library.add(
   faPlus,
   faBus,
   faAngleRight,
-  faArrowLeft
+  faArrowLeft,
+  faX,
+  faBowlFood,
+  faBuildingColumns,
+  faBagShopping,
+  faTemperatureEmpty,
+  faCircleExclamation,
 );
 
 let app = createApp(App);
