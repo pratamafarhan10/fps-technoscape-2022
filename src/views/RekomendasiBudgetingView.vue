@@ -538,6 +538,8 @@ export default {
                     is_every_month: true,
                     bulan: `${year}-${month}`,
                }) 
+
+               this.$router.push('/budget');
             }catch(error){
                 error.message
             }
