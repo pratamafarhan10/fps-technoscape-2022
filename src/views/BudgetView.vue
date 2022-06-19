@@ -1,5 +1,10 @@
 <template>
-    <div>
+    <div class="p-5 flex justify-center items-center h-11/12 grow" v-if="isLoading">
+        <button class="btn bg-transparent loading text-black border-none">
+            Loading data...
+        </button>
+    </div>
+    <div v-else>
         <!-- history header -->
         <div class="grid grid-flow-row auto-rows-auto bg-history-blue px-5 py-5 min-h-content text-white gap-4"
             id="riwayat-transaksi">
@@ -41,7 +46,7 @@
                                 </div>
                             </div>
                             <div class="mt-2">
-                                <progress class="progress progress-error" value="50" max="100"></progress>
+                                <progress class="progress progress-error" :value="progressValue(budget.budget, totalPengeluaran())" max="100"></progress>
                             </div>
                         </div>
                     </div>
@@ -109,7 +114,7 @@
                             <div class="col-span-4">
                                 <div class="text-xl font-bold">Food</div>
                                 <div>
-                                    <progress class="progress progress-primary" :value="progressBar(budget.category.food_and_dining, transaksi.category.food_and_dining)" max="100"></progress>
+                                    <progress class="progress progress-primary" :value="progressValue(budget.category.food_and_dining, transaksi.category.food_and_dining)" max="100"></progress>
 
                                 </div>
                             </div>
@@ -154,13 +159,15 @@
                             <div class="col-span-4">
                                 <div class="text-xl font-bold">Education</div>
                                 <div>
-                                    <progress class="progress progress-primary" :value="progressBar(budget.category.education, transaksi.category.education)"  max="100"></progress>
+                                    <progress class="progress progress-primary" :value="progressValue(budget.category.education, transaksi.category.education)" max="100"></progress>
 
                                 </div>
                             </div>
                             <div class="col-span-4">
                                 <div class="text-end text-gray-500">Sisa budget</div>
-                                <div class="text-end text-xl font-bold">{{rupiahFormat(budget.category.education)}}</div>
+                                <div class="text-end text-xl font-bold">{{
+                                        rupiahFormat(budget.category.education - transaksi.category.education)
+                                }}</div>
                             </div>
 
                         </div>
@@ -200,7 +207,7 @@
                             <div class="col-span-4">
                                 <div class="text-xl font-bold">Shopping</div>
                                 <div>
-                                    <progress class="progress progress-primary" :value="progressBar(budget.category.shopping, transaksi.category.shopping)"  max="100"></progress>
+                                    <progress class="progress progress-primary" :value="progressValue(budget.category.shopping, transaksi.category.shopping)" max="100"></progress>
 
                                 </div>
                             </div>
@@ -250,7 +257,9 @@
                             </div>
                             <div class="col-span-4">
                                 <div class="text-end text-gray-500">Sisa budget</div>
-                                <div class="text-end text-xl font-bold">{{rupiahFormat(sisaBudgetCategory(budget.category.health_and_fitness, transaksi.category.health_and_fitness))}}</div>
+                                <div class="text-end text-xl font-bold">{{
+                                        rupiahFormat(budget.category.health_and_fitness)
+                                }}</div>
                             </div>
                         </div>
                         <div class="p-8">
@@ -294,7 +303,7 @@
                             </div>
                             <div class="col-span-4">
                                 <div class="text-end text-gray-500">Sisa budget</div>
-                                <div class="text-end text-xl font-bold">{{rupiahFormat(sisaBudgetCategory(budget.category.deposit, transaksi.category.deposit))}}</div>
+                                <div class="text-end text-xl font-bold">{{rupiahFormat(budget.category.deposit - transaksi.category.deposit)}}</div>
                             </div>
                         </div>
                         <div class="p-8">
@@ -326,6 +335,7 @@
 export default {
     data() {
         return {
+            isLoading: false,
             budget: {
                 category: {
                     transportation: 0,
@@ -409,6 +419,16 @@ export default {
             }
             return a - b;
         },
+        progressValue(budget, transaksi){
+            let progress = (transaksi / budget) * 100;
+
+            if(progress > 100) {
+                return 100;
+            }else {
+                return progress
+            }
+            // return (transaksi / budget) * 100;
+        },
         rupiahFormat(number) {
             return new Intl.NumberFormat("id-ID", {
                 style: "currency",
@@ -424,7 +444,9 @@ export default {
         }
     },
     async created() {
+        this.isLoading = true;
         await this.getBudget();
+        this.isLoading = false;
     }
 }
 
