@@ -44,3 +44,26 @@ Font Awesome adalah kumpulan fon dan ikon yang berbasis pada CSS dan Less.
 
 ## 10. Moment js
 Moment.js merupakan sebuah pustaka yang didesain untuk dapat mem-parsing, memvalidasi, memanipulasi serta menampilkan tanggal dan waktu di Javascript. Pustaka ini dapat bekerja dengan baik di browser ataupun Node.js.
+
+## Tutorial Setup This Projek
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
