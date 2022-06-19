@@ -10,7 +10,6 @@
                             <font-awesome-icon icon="fa-solid fa-arrow-left" class="text-black" />
                         </div>
                     </router-link>
-
                 </div>
                 <div class="col-span-8 text-2xl font-semibold flex items-center">
                     Detail Budgeting
@@ -26,7 +25,7 @@
                             'bg-sky-100': category == 'education',
                             'bg-orange-100': category == 'shopping',
                             'bg-indigo-100': category == 'health_and_fitness',
-                            'bg-teal-100': category == 'investment',
+                            'bg-teal-100': category == 'deposit',
                         }">
                             <div class="col-span-2 flex justify-center">
                                 <div class="w-16 h-16 bg-blue-200 flex justify-center items-center rounded-lg" :class="{
@@ -35,7 +34,7 @@
                                     'bg-sky-200': category == 'education',
                                     'bg-orange-200': category == 'shopping',
                                     'bg-indigo-200': category == 'health_and_fitness',
-                                    'bg-teal-200': category == 'investment',
+                                    'bg-teal-200': category == 'deposit',
                                 }">
                                     <font-awesome-icon icon="fa-solid fa-bowl-food" 
                                         class="w-8 h-8 text-blue-800" :class="{
@@ -72,7 +71,7 @@
                             'bg-sky-100': category == 'education',
                             'bg-orange-100': category == 'shopping',
                             'bg-indigo-100': category == 'health_and_fitness',
-                            'bg-teal-100': category == 'investment',
+                            'bg-teal-100': category == 'deposit',
                         }">
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="text-lg text-black font-medium">Sisa Budget</div>
@@ -84,6 +83,7 @@
                                     'text-indigo-800': category == 'health_and_fitness',
                                     'text-teal-800': category == 'investment',
                                 }">{{rupiahFormat(budget.category[category] - this.terpakai)}}</div>
+
                             </div>
                         </div>
                     </div>
@@ -166,7 +166,7 @@ export default {
                     education: 0,
                     shopping: 0,
                     health_and_fitness: 0,
-                    investment: 0,
+                    deposit: 0,
                 },
                 budget: 0
             }
@@ -225,6 +225,7 @@ export default {
         }
     },
     created() {
+        console.log(this.category);
         this.getBudget();
         console.log(this.categoryName);
     }

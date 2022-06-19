@@ -67,6 +67,7 @@ library.add(
   faTemperatureEmpty,
   faCircleExclamation,
   faMoneyBill1Wave
+
 );
 
 let app = createApp(App);
