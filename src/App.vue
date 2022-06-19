@@ -4,7 +4,7 @@
     <div class="bg-slate-50 flex flex-col justify-between">
       <router-view />
       <!-- <div class="bg-slate-100"> -->
-      <div class="bg-slate-100">
+      <div class="bg-slate-100 mt-5">
         <ul class="menu menu-horizontal p-2 w-full justify-between">
           <li>
             <router-link :to="{ name: 'home' }">

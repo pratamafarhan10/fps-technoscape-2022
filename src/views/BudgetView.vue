@@ -37,7 +37,7 @@
                                 </div>
                                 <div>
                                     <div class="text-gray-500">Budget Bulanan</div>
-                                    <div class="text-black font-bold text-2xl">Rp. 3.000.000</div>
+                                    <div class="text-black font-bold text-2xl">{{ rupiahFormat(budget.budget) }}</div>
                                 </div>
                             </div>
                             <div class="mt-2">
@@ -52,7 +52,9 @@
 
         <!-- budgets -->
         <div class="px-5 mt-5">
-            <div class="card bg-white border border-gray-200">
+
+            <!-- transportasi -->
+            <div class="card bg-white border border-gray-200" v-if="budget.category.transportation !== 0">
                 <div class="card-body p-0">
                     <div class="grid grid-flow-row auto-rows-auto">
                         <div class="bg-blue-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
@@ -76,7 +78,232 @@
                         <div class="p-8">
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="text-lg text-gray-500">Total Budget</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">Rp. 800.000</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{
+                                        rupiahFormat(budget.category.transportation)
+                                }}</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mt-5">
+                                <div class="text-lg text-gray-500">Terpakai</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                            </div>
+                            <div class="text-light-blue text-lg font-semibold text-center mt-5">
+                                <router-link :to="{ name: 'budget detail' }">
+                                    Lihat Detail
+                                    <font-awesome-icon icon="fa-solid fa-angle-right" />
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- food -->
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.food_and_dining !== 0">
+                <div class="card-body p-0">
+                    <div class="grid grid-flow-row auto-rows-auto">
+                        <div class="bg-green-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
+                            <div class="col-span-2 flex justify-center">
+                                <div class="w-14 h-14 bg-green-200 flex justify-center items-center rounded-lg">
+                                    <font-awesome-icon icon="fa-solid fa-bowl-food" class="w-8 h-8 text-green-800" />
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-xl font-bold">Food</div>
+                                <div>
+                                    <progress class="progress progress-primary" value="50" max="100"></progress>
+
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-end text-gray-500">Sisa budget</div>
+                                <div class="text-end text-xl font-bold">Rp. 200.000</div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-lg text-gray-500">Total Budget</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{
+                                        rupiahFormat(budget.category.food_and_dining)
+                                }}</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mt-5">
+                                <div class="text-lg text-gray-500">Terpakai</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                            </div>
+                            <div class="text-light-blue text-lg font-semibold text-center mt-5">
+                                <router-link :to="{ name: 'budget detail' }">
+                                    Lihat Detail
+                                    <font-awesome-icon icon="fa-solid fa-angle-right" />
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- education -->
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.education !== 0">
+                <div class="card-body p-0">
+                    <div class="grid grid-flow-row auto-rows-auto">
+                        <div class="bg-sky-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
+                            <div class="col-span-2 flex justify-center">
+                                <div class="w-14 h-14 bg-sky-200 flex justify-center items-center rounded-lg">
+                                    <font-awesome-icon icon="fa-solid fa-building-columns"
+                                        class="w-8 h-8 text-sky-800" />
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-xl font-bold">Education</div>
+                                <div>
+                                    <progress class="progress progress-primary" value="50" max="100"></progress>
+
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-end text-gray-500">Sisa budget</div>
+                                <div class="text-end text-xl font-bold">Rp. 200.000</div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-lg text-gray-500">Total Budget</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{
+                                        rupiahFormat(budget.category.education)
+                                }}</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mt-5">
+                                <div class="text-lg text-gray-500">Terpakai</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                            </div>
+                            <div class="text-light-blue text-lg font-semibold text-center mt-5">
+                                <router-link :to="{ name: 'budget detail' }">
+                                    Lihat Detail
+                                    <font-awesome-icon icon="fa-solid fa-angle-right" />
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- shopping -->
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.shopping !== 0">
+                <div class="card-body p-0">
+                    <div class="grid grid-flow-row auto-rows-auto">
+                        <div class="bg-orange-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
+                            <div class="col-span-2 flex justify-center">
+                                <div class="w-14 h-14 bg-orange-200 flex justify-center items-center rounded-lg">
+                                    <font-awesome-icon icon="fa-solid fa-bag-shopping"
+                                        class="w-8 h-8 text-orange-800" />
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-xl font-bold">Shopping</div>
+                                <div>
+                                    <progress class="progress progress-primary" value="50" max="100"></progress>
+
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-end text-gray-500">Sisa budget</div>
+                                <div class="text-end text-xl font-bold">Rp. 200.000</div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-lg text-gray-500">Total Budget</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{
+                                        rupiahFormat(budget.category.shopping)
+                                }}</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mt-5">
+                                <div class="text-lg text-gray-500">Terpakai</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                            </div>
+                            <div class="text-light-blue text-lg font-semibold text-center mt-5">
+                                <router-link :to="{ name: 'budget detail' }">
+                                    Lihat Detail
+                                    <font-awesome-icon icon="fa-solid fa-angle-right" />
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- health -->
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.health_and_fitness !== 0">
+                <div class="card-body p-0">
+                    <div class="grid grid-flow-row auto-rows-auto">
+                        <div class="bg-indigo-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
+                            <div class="col-span-2 flex justify-center">
+                                <div class="w-14 h-14 bg-indigo-200 flex justify-center items-center rounded-lg">
+                                    <font-awesome-icon icon="fa-solid fa-temperature-empty"
+                                        class="w-8 h-8 text-indigo-800" />
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-xl font-bold">Health</div>
+                                <div>
+                                    <progress class="progress progress-primary" value="50" max="100"></progress>
+
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-end text-gray-500">Sisa budget</div>
+                                <div class="text-end text-xl font-bold">Rp. 200.000</div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-lg text-gray-500">Total Budget</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{
+                                        rupiahFormat(budget.category.health_and_fitness)
+                                }}</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mt-5">
+                                <div class="text-lg text-gray-500">Terpakai</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                            </div>
+                            <div class="text-light-blue text-lg font-semibold text-center mt-5">
+                                <router-link :to="{ name: 'budget detail' }">
+                                    Lihat Detail
+                                    <font-awesome-icon icon="fa-solid fa-angle-right" />
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- investing -->
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.investment !== 0">
+                <div class="card-body p-0">
+                    <div class="grid grid-flow-row auto-rows-auto">
+                        <div class="bg-teal-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
+                            <div class="col-span-2 flex justify-center">
+                                <div class="w-14 h-14 bg-teal-200 flex justify-center items-center rounded-lg">
+                                    <font-awesome-icon icon="fa-solid fa-sack-dollar" class="w-8 h-8 text-teal-800" />
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-xl font-bold">Investment</div>
+                                <div>
+                                    <progress class="progress progress-primary" value="50" max="100"></progress>
+
+                                </div>
+                            </div>
+                            <div class="col-span-4">
+                                <div class="text-end text-gray-500">Sisa budget</div>
+                                <div class="text-end text-xl font-bold">Rp. 200.000</div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-lg text-gray-500">Total Budget</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{
+                                        rupiahFormat(budget.category.investment)
+                                }}</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">Terpakai</div>
@@ -97,6 +324,42 @@
 </template>
 
 <script>
+export default {
+    data() {
+        return {
+            budget: {
+                category: {
+                    transportation: 0,
+                    food_and_dining: 0,
+                    education: 0,
+                    shopping: 0,
+                    health_and_fitness: 0,
+                    investment: 0,
+                },
+                budget: 0
+            }
+        }
+    },
+    methods: {
+        async getBudget() {
+            try {
+                await this.$store.dispatch('budget/getBudget');
+                this.budget = this.$store.getters['budget/getBudget'];
+            } catch (error) {
+                console.log(error.message);
+            }
+        },
+        rupiahFormat(number) {
+            return new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+            }).format(number);
+        },
+    },
+    created() {
+        this.getBudget();
+    }
+}
 
 </script>
 

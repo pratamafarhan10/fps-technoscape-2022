@@ -40,8 +40,7 @@ export default {
         url: `${url}/${userId}/budget.json?auth=${idToken}`,
       });
 
-      let budget = response.data.budget;
-      console.log(budget);
+      let budget = response.data;
       context.commit("setBudget", { budget });
     } catch (error) {
       console.log(error.message);

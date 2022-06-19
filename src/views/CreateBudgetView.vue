@@ -232,7 +232,7 @@
                                         <div class="col-span-2">
                                             <div
                                                 class="w-14 h-14 bg-sky-200 flex justify-center items-center rounded-lg">
-                                                <font-awesome-icon icon="fa-solid fa-bowl-food"
+                                                <font-awesome-icon icon="fa-solid fa-building-columns"
                                                     class="w-8 h-8 text-sky-800" />
                                             </div>
                                         </div>
@@ -259,7 +259,7 @@
                                         <div class="col-span-2">
                                             <div
                                                 class="w-14 h-14 bg-orange-200 flex justify-center items-center rounded-lg">
-                                                <font-awesome-icon icon="fa-solid fa-bowl-food"
+                                                <font-awesome-icon icon="fa-solid fa-bag-shopping"
                                                     class="w-8 h-8 text-orange-800" />
                                             </div>
                                         </div>
@@ -287,7 +287,7 @@
                                         <div class="col-span-2">
                                             <div
                                                 class="w-14 h-14 bg-indigo-200 flex justify-center items-center rounded-lg">
-                                                <font-awesome-icon icon="fa-solid fa-bowl-food"
+                                                <font-awesome-icon icon="fa-solid fa-temperature-empty"
                                                     class="w-8 h-8 text-indigo-800" />
                                             </div>
                                         </div>
@@ -315,7 +315,7 @@
                                         <div class="col-span-2">
                                             <div
                                                 class="w-14 h-14 bg-teal-200 flex justify-center items-center rounded-lg">
-                                                <font-awesome-icon icon="fa-solid fa-bowl-food"
+                                                <font-awesome-icon icon="fa-solid fa-sack-dollar"
                                                     class="w-8 h-8 text-teal-800" />
                                             </div>
                                         </div>
