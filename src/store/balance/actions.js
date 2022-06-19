@@ -1,9 +1,11 @@
 import axios from 'axios';
 export default  {
     async setBalance(context, data){
-        await axios.get("https://sandbox.onebrick.io/v1/account/list", {
+        context.state.balance = 0;
+        for(let i in data){
+            await axios.get("https://sandbox.onebrick.io/v1/account/list", {
                 headers: {
-                    'Authorization': `Bearer ${data}`,
+                    'Authorization': `Bearer ${data[i]}`,
                     'Content-Type': 'application/json'
                 },
             }).then(response => { 
@@ -12,6 +14,7 @@ export default  {
                 balance: response.data.data[0].balances.available
             })
         })
+        }
     },
 
     async getTsrf(context, data){

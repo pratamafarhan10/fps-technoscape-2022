@@ -157,11 +157,11 @@
 </template>
 
 <script>
-import axios from 'axios'
 // let url = "https://sandbox.onebrick.io/v1/"
 export default {
     data() {
         return {
+            dataAccsess:[],
             // tanggal sekarang
             currentDate: "",
             data: [],
@@ -175,35 +175,20 @@ export default {
         }
     },
     methods: {
-         async getHistory(){
-            await this.getUserAccess()
-            await this.$store.dispatch('transaksi/setTransaksi', this.data.gopay)
-            await this.$store.dispatch('transaksi/setTransaksi', this.data.ovo)
-            await this.$store.dispatch('transaksi/setTransaksi', this.data.tsrf)
+         async getHistory(){ 
+            await this.$store.dispatch('userAccses/getUserAccess');
+            this.dataAccsess =  await this.$store.getters['userAccses/userAccsess'];            
+            await this.$store.dispatch('transaksi/setTransaksi', this.dataAccsess)
             await this.totalBalance()
             this.sortingData()
         },
 
         async totalBalance(){
-            await this.$store.dispatch('balance/setBalance', this.data.ovo)
-            await this.$store.dispatch('balance/setBalance', this.data.gopay);
-            await this.$store.dispatch('balance/setBalance', this.data.tsrf)
+            await this.$store.dispatch('balance/setBalance', this.dataAccsess)
             this.balance = this.$store.getters['balance/balance']
             console.log(this.balance)
         },
 
-        async getUserAccess() {
-            let idToken = localStorage.getItem('idToken');
-
-            let data = await axios({
-                method: 'get',
-                url: `https://fps-technoscape-default-rtdb.asia-southeast1.firebasedatabase.app/userToken/id_1/.json?auth=${idToken}`,
-            }).then(response => {
-                return response.data
-            })
-
-            return this.data = data
-        },
         async dataIncome(){
             let data = []
             this.income.forEach(element => {
@@ -246,11 +231,12 @@ export default {
             console.log(this.sortedOutcome)
         },
         async sortingData(){
+
             this.income = this.$store.getters['transaksi/income']
             
             await this.dataIncome();
 
-            this.outcome= this.$store.getters['transaksi/outcome']
+            this.outcome = this.$store.getters['transaksi/outcome']
             
             await this.dataOutcome();
         },

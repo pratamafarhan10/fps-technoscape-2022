@@ -203,12 +203,10 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
     data() {
         return {
-            data:[],
+            dataAccsess:[],
             dataPemasukan: "",
             pemasukan: 0,
             dataPengeluaran: "",
@@ -220,10 +218,9 @@ export default {
         }
     },methods: {
         async revenueMoney() {
-            await this.getUserAccess();
-            await this.$store.dispatch('transaksi/setTransaksi', this.data.gopay)
-            await this.$store.dispatch('transaksi/setTransaksi', this.data.ovo)
-            await this.$store.dispatch('transaksi/setTransaksi', this.data.tsrf)
+            await this.$store.dispatch('userAccses/getUserAccess');
+            this.dataAccsess =  await this.$store.getters['userAccses/userAccsess'];            
+            await this.$store.dispatch('transaksi/setTransaksi', this.dataAccsess)
             await this.balanceWallet()
             this.dataPengeluaran = await this.$store.getters['transaksi/outcome']
             this.dataPemasukan = await this.$store.getters['transaksi/income']
@@ -246,13 +243,12 @@ export default {
             })
         },
         async balanceWallet() {
-            await this.$store.dispatch('balance/getTsrf', this.data.tsrf)
+            await this.$store.dispatch('balance/getTsrf', this.dataAccsess.tsrf)
             this.tsrf = await this.$store.getters['balance/tsrf']
-            await this.$store.dispatch('balance/getGopay', this.data.gopay)
+            await this.$store.dispatch('balance/getGopay', this.dataAccsess.gopay)
             this.gopay = await this.$store.getters['balance/gopay']
-            await this.$store.dispatch('balance/getOvo', this.data.ovo)
+            await this.$store.dispatch('balance/getOvo', this.dataAccsess.ovo)
             this.ovo = await this.$store.getters['balance/ovo']
-            console.log(this.ovo)
         },
         async hitung(data) {
             let total = 0;
@@ -261,20 +257,7 @@ export default {
                 total += element.amount
             });
             return total
-        },
-        async getUserAccess(){
-            let idToken  = localStorage.getItem('idToken');
-
-            let data =  await axios({
-                method: 'get',
-                url: `https://fps-technoscape-default-rtdb.asia-southeast1.firebasedatabase.app/userToken/id_1/.json?auth=${idToken}`,
-            }).then(response => {
-                return response.data
-            })
-
-            return this.data = data
-        },
-        
+        }     
     },
     async created() {
         await this.revenueMoney();
