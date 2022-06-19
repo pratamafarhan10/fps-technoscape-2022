@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="col-span-6 flex items-center text-2xl font-semibold">
-                                Food
+                                Food and Dining
                             </div>
                             <div class="col-span-2 flex items-center justify-end">
                                 <input type="checkbox" class="checkbox bg-white" value="food_and_dining"
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                             <div class="col-span-6 flex items-center text-2xl font-semibold">
-                                Health
+                                Health and Fitness
                             </div>
                             <div class="col-span-2 flex items-center justify-end">
                                 <input type="checkbox" class="checkbox bg-white" value="health_and_fitness"
@@ -210,7 +210,7 @@
                                             </div>
                                         </div>
                                         <div class="col-span-8 flex items-center text-2xl font-semibold">
-                                            Food
+                                            Food and Dining
                                         </div>
                                     </div>
                                     <div class="form-control mt-3">
@@ -292,7 +292,7 @@
                                             </div>
                                         </div>
                                         <div class="col-span-8 flex items-center text-2xl font-semibold">
-                                            Health
+                                            Health and fitness
                                         </div>
                                     </div>
                                     <div class="form-control mt-3">

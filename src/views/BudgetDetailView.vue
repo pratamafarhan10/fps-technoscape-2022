@@ -1,5 +1,10 @@
 <template>
-    <div>
+    <div class="p-5 flex justify-center items-center h-11/12 grow" v-if="isLoading">
+        <button class="btn bg-transparent loading text-black border-none">
+            Loading data...
+        </button>
+    </div>
+    <div v-else>
         <!-- history header -->
         <div class="grid grid-flow-row auto-rows-auto bg-history-blue px-5 py-5 min-h-content text-white gap-4"
             id="riwayat-transaksi">
@@ -50,7 +55,7 @@
                             <div class="col-span-8">
                                 <div class="text-2xl text-black font-bold">{{ categoryName }}</div>
                                 <div>
-                                    <progress class="progress progress-primary" value="50" max="100"></progress>
+                                    <progress class="progress progress-primary" :value="progressValue(budget.category[category], terpakai)" max="100"></progress>
 
                                 </div>
                             </div>
@@ -62,7 +67,7 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">Terpakai</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">-{{rupiahFormat(this.terpakai)}}</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">-{{rupiahFormat(terpakai)}}</div>
                             </div>
                         </div>
                         <div class="p-8" :class="{
@@ -157,6 +162,7 @@ export default {
     data() {
         return {
             currentTab: 'pengeluaran',
+            isLoading: false,
             transaksi:[],
             terpakai: 0,
             budget: {
@@ -222,12 +228,22 @@ export default {
             }
 
             console.log(this.terpakai);
-        }
+        },
+        progressValue(budget, transaksi){
+            let progress = (transaksi / budget) * 100;
+
+            if(progress > 100) {
+                return 100;
+            }else {
+                return progress
+            }
+            // return (transaksi / budget) * 100;
+        },
     },
-    created() {
-        console.log(this.category);
-        this.getBudget();
-        console.log(this.categoryName);
+    async created() {
+        this.isLoading = true;
+        await this.getBudget();
+        this.isLoading = false;
     }
 }
 

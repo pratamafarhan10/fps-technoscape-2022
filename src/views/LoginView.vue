@@ -1,5 +1,5 @@
 <template>
-    <div class="top">
+    <div class="top ">
         <div class="bg-cyan-400	atas ">
             <br>
             <br>
@@ -46,8 +46,9 @@
             <div class="grid-rows-1">
                 <img class="text-center" src="../assets/ovo_logo.png" alt="">
             </div>
-            <div class="grid-rows-1">
-                <img class="p-3 text-center" src="../assets/gopay_bg.png" alt="">
+            <div class="grid-rows-1 flex items-end text-3xl font-semibold justify-center">
+                <!-- <img class="p-3 text-center" src="../assets/gopay_bg.png" alt=""> -->
+                Mock Bank
             </div>
         </div>
        </div>

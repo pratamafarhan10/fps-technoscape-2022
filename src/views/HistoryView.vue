@@ -89,7 +89,7 @@
                                                                 'text-green-500': currentTab == 'pemasukan',
                                                             }">
                                                                 <h1>
-                                                                    {{ n.amount }}
+                                                                    {{ rupiahFormat(n.amount) }}
                                                                 </h1>
                                                             </div>
                                                             <div class="text-gray-500">{{ n.date }}</div>
@@ -139,7 +139,7 @@
                                                                 'text-green-500': currentTab == 'pemasukan',
                                                             }">
                                                                 <h1>
-                                                                    {{ n.amount }}
+                                                                    {{ rupiahFormat(n.amount) }}
                                                                 </h1>
                                                             </div>
                                                             <div class="text-gray-500">{{ n.date }}</div>

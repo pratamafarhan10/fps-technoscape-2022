@@ -12,7 +12,7 @@
             <!-- Header profil -->
             <div class="grid grid-cols-10 gap-4 ">
                 <div class="col-span-8  ">
-                    <select class="select w-full bg-transparent max-w-xs border-solid border-2 border-sky-400">
+                    <select class="select w-30 bg-transparent max-w-xs">
                         <option class="bg-history-blue">June 2022</option>
                         <option class="bg-history-blue">Mei 2022</option>
                     </select>
@@ -350,7 +350,7 @@ export default {
         progressBar(){
             let b = this.budget.budget
             let a = this.sisa
-            return (((b/a)*100)-100);
+            return (((a/b)*100));
         }
     },
     async created() {

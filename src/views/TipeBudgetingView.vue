@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="grid grid-cols-5 gap-4 mt-4">
                                     <div class="col-span-4 text-gray-500">
-                                        Belum bisa ngatur keuangan? pakai template dan rekomendasi kita aja!
+                                        Sudah bisa mengatur keuangan?? Atur budgeting-mu sendiri !
                                     </div>
                                     <div class="col-span-1 flex justify-end items-center">
                                         <router-link :to="{ name: 'create budget' }">

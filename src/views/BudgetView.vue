@@ -10,7 +10,7 @@
             id="riwayat-transaksi">
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <select class="select w-full bg-transparent border-none max-w-xs">
+                    <select class="select w-30 bg-transparent max-w-xs">
                         <option class="bg-history-blue">June 2022</option>
                         <option class="bg-history-blue">Mei 2022</option>
                     </select>
@@ -59,7 +59,7 @@
         <div class="px-5 mt-5">
 
             <!-- transportasi -->
-            <div class="card bg-white border border-gray-200" v-if="budget.category.transportation !== 0">
+            <div class="card bg-white border border-gray-200" v-if="budget.category.transportation !== undefined">
                 <div class="card-body p-0">
                     <div class="grid grid-flow-row auto-rows-auto">
                         <div class="bg-blue-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
@@ -71,12 +71,12 @@
                             <div class="col-span-4">
                                 <div class="text-xl font-bold">Transportasi</div>
                                 <div>
-                                    <progress class="progress progress-primary" :value="progressBar(budget.category.transportation, transaksi.category.transportation)" max="100"></progress>
+                                    <progress class="progress progress-primary" value="0" max="100"></progress>
                                 </div>
                             </div>
                             <div class="col-span-4">
                                 <div class="text-end text-gray-500">Sisa budget</div>
-                                <div class="text-end text-xl font-bold">{{rupiahFormat(sisaBudgetCategory(budget.category.transportation, transaksi.category.transportation))}}</div>
+                                <div class="text-end text-xl font-bold">{{rupiahFormat(budget.category.transportation - transaksi.category.transportation)}}</div>
                             </div>
                         </div>
                         <div class="p-8">
@@ -102,7 +102,7 @@
             </div>
 
             <!-- food -->
-            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.food_and_dining !== 0">
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.food_and_dining !== undefined">
                 <div class="card-body p-0">
                     <div class="grid grid-flow-row auto-rows-auto">
                         <div class="bg-green-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
@@ -146,7 +146,7 @@
             </div>
 
             <!-- education -->
-            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.education !== 0">
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.education !== undefined">
                 <div class="card-body p-0">
                     <div class="grid grid-flow-row auto-rows-auto">
                         <div class="bg-sky-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
@@ -194,7 +194,7 @@
             </div>
 
             <!-- shopping -->
-            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.shopping !== 0">
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.shopping !== undefined">
                 <div class="card-body p-0">
                     <div class="grid grid-flow-row auto-rows-auto">
                         <div class="bg-orange-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
@@ -239,7 +239,7 @@
             </div>
 
             <!-- health -->
-            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.health_and_fitness !== 0">
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.health_and_fitness !== undefined">
                 <div class="card-body p-0">
                     <div class="grid grid-flow-row auto-rows-auto">
                         <div class="bg-indigo-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
@@ -285,7 +285,7 @@
             </div>
 
             <!-- deposit -->
-            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.deposit !== 0">
+            <div class="card bg-white border border-gray-200 mt-5" v-if="budget.category.deposit !== undefined">
                 <div class="card-body p-0">
                     <div class="grid grid-flow-row auto-rows-auto">
                         <div class="bg-teal-100 py-5 px-5 grid grid-cols-10 gap-4 border-b border-b-gray-200">
