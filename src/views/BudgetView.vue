@@ -94,6 +94,31 @@
     </div>
 </template>
 
+<<<<<<< Updated upstream
+=======
+<script>
+export default {
+    data () {
+        return {
+            dataAccsess:[],
+            budget:[],
+            category:{},
+        }
+    },
+    methods: {
+    },
+    async created () {
+        await this.$store.dispatch('userAccses/getUserAccess');
+        await this.$store.dispatch('budget/getBudget');
+        this.budget = await this.$store.getters['budget/getBudget'];
+        this.category = await this.$store.getters['budget/getCategory'];
+        console.log(this.category);
+    }
+            
+}
+</script>
+
+>>>>>>> Stashed changes
 <style scoped>
 #riwayat-transaksi {
     background-image: url("../assets/bg\ riwayat\ transaksi.png");
