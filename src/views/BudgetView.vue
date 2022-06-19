@@ -116,7 +116,7 @@
                             </div>
                             <div class="col-span-4">
                                 <div class="text-end text-gray-500">Sisa budget</div>
-                                <div class="text-end text-xl font-bold">{{rupiahFormat(budget.category.food_and_dining - transaksi.category.food_and_dining)}}</div>
+                                <div class="text-end text-xl font-bold">{{rupiahFormat(sisaBudgetCategory(budget.category.food_and_dining, transaksi.category.food_and_dining))}}</div>
                             </div>
                         </div>
                         <div class="p-8">
@@ -296,7 +296,7 @@
                             </div>
                             <div class="col-span-4">
                                 <div class="text-end text-gray-500">Sisa budget</div>
-                                <div class="text-end text-xl font-bold">{{rupiahFormat(budget.category.deposit - transaksi.category.deposit )}}</div>
+                                <div class="text-end text-xl font-bold">{{rupiahFormat(sisaBudgetCategory(budget.category.deposit, transaksi.category.deposit))}}</div>
                             </div>
                         </div>
                         <div class="p-8">
@@ -404,6 +404,13 @@ export default {
                 total += this.budget.category[x];
             }
             return total - this.totalPengeluaran();
+        },
+        sisaBudgetCategory(a, b){
+            if(a - b < 0) {
+                return 0;
+            }
+            console.log(b);
+            return a - b;
         },
         rupiahFormat(number) {
             return new Intl.NumberFormat("id-ID", {
