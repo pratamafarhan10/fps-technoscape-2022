@@ -10,7 +10,6 @@
                             <font-awesome-icon icon="fa-solid fa-arrow-left" class="text-black" />
                         </div>
                     </router-link>
-
                 </div>
                 <div class="col-span-8 text-2xl font-semibold flex items-center">
                     Detail Budgeting
@@ -187,6 +186,7 @@ export default {
         },
     },
     created() {
+        console.log(this.category);
         this.getBudget();
     }
 }

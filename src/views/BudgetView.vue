@@ -11,7 +11,7 @@
                     </select>
                 </div>
                 <div class="flex justify-end items-center">
-                    <router-link :to="{ name: 'create budget' }">
+                    <router-link :to="{ name: 'pilih tipe budget' }">
                         <div class="py-2 px-4 bg-white rounded-lg">
                             <font-awesome-icon icon="fa-solid fa-plus" class="text-black" />
                         </div>

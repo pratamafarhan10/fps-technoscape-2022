@@ -8,6 +8,8 @@ import BudgetView from "../views/BudgetView.vue";
 import BudgetTipsView from "../views/BudgetTipsView.vue";
 import BudgetDetailView from "../views/BudgetDetailView.vue";
 import CreateBudgetView from "../views/CreateBudgetView.vue";
+import TipeBudgetingView from "../views/TipeBudgetingView.vue";
+import RekomendasiBudgetingView from "../views/RekomendasiBudgetingView.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -62,9 +64,25 @@ const router = createRouter({
       },
     },
     {
+      path: "/pilihtipebudget",
+      name: "pilih tipe budget",
+      component: TipeBudgetingView,
+      meta: {
+        auth: true,
+      },
+    },
+    {
       path: "/createbudget",
       name: "create budget",
       component: CreateBudgetView,
+      meta: {
+        auth: true,
+      },
+    },
+    {
+      path: "/rekomendasibudget",
+      name: "rekomendasi budget",
+      component: RekomendasiBudgetingView,
       meta: {
         auth: true,
       },

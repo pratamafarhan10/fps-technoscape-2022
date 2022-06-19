@@ -36,7 +36,7 @@ import {
   faBuildingColumns,
   faBagShopping,
   faTemperatureEmpty,
-  faCircleExclamation
+  faCircleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -65,6 +65,7 @@ library.add(
   faBagShopping,
   faTemperatureEmpty,
   faCircleExclamation,
+
 );
 
 let app = createApp(App);

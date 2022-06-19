@@ -264,7 +264,7 @@ export default {
 
             this.dataAktivitasTransaksi = this.dataAktivitasTransaksi.sort((a, b) => {
                 return new Date(a.date) - new Date(b.date)
-            }).slice(0, 5)
+            }).reverse().slice(0, 5)
         },
         async balanceWallet() {
             await this.$store.dispatch('balance/getTsrf', this.dataAccsess.tsrf)
