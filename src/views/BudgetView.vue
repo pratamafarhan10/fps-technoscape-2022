@@ -356,8 +356,8 @@ export default {
             }).format(number);
         },
     },
-    created() {
-        this.getBudget();
+    async created() {
+        await this.getBudget();
     }
 }
 
