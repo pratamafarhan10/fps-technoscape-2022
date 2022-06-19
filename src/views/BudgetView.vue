@@ -116,7 +116,7 @@
                             </div>
                             <div class="col-span-4">
                                 <div class="text-end text-gray-500">Sisa budget</div>
-                                <div class="text-end text-xl font-bold">Rp. 200.000</div>
+                                <div class="text-end text-xl font-bold">{{rupiahFormat(budget.category.food_and_dining - transaksi.category.food_and_dining)}}</div>
                             </div>
                         </div>
                         <div class="p-8">
@@ -128,7 +128,7 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="text-lg text-gray-500">Terpakai</div>
-                                <div class="text-lg text-gray-500 text-end font-semibold">- Rp. 600.000</div>
+                                <div class="text-lg text-gray-500 text-end font-semibold">{{rupiahFormat(transaksi.category.food_and_dining)}}</div>
                             </div>
                             <div class="text-light-blue text-lg font-semibold text-center mt-5">
                                 <router-link :to="{ name: 'budget detail' }">
@@ -337,7 +337,26 @@ export default {
                     investment: 0,
                 },
                 budget: 0
-            }
+            },
+            transaksi: {
+                category: {
+                    transportation: 0,
+                    food_and_dining: 0,
+                    education: 0,
+                    shopping: 0,
+                    health_and_fitness: 0,
+                    investment: 0,
+                },
+            },
+            outcome: {
+                transportation: [],
+                food_and_dining: [],
+                education: [],
+                shopping: [],
+                health_and_fitness: [],
+                investment: [],
+            },
+            dataAccsess: []
         }
     },
     methods: {
@@ -345,7 +364,34 @@ export default {
             try {
                 await this.$store.dispatch('budget/getBudget');
                 this.budget = this.$store.getters['budget/getBudget'];
+                await this.getTransaksi();
             } catch (error) {
+                console.log(error.message);
+            }
+        },
+        async getTransaksi() {
+            try {
+                await this.$store.dispatch('userAccses/getUserAccess');
+                this.dataAccsess =  await this.$store.getters['userAccses/userAccsess'];            
+                await this.$store.dispatch('transaksi/setTransaksi', this.dataAccsess)
+                // this.transaksi = 
+                let dataTransaksi = await this.$store.getters['transaksi/outcome'];
+                for(let i = 0; i < dataTransaksi.length; i++) {
+                    for(let x in this.transaksi.category) {
+                        if(x == "food_and_dining") {
+                            x = "food & dining";
+                        }
+                        if(x == dataTransaksi[i].category.classification_group) {
+                            if(x == "food & dining") {
+                                x = "food_and_dining";
+                            }
+                            this.outcome[x].push(dataTransaksi[i]);
+                            this.transaksi.category[x] += dataTransaksi[i].amount;
+                        }
+                    }
+                }
+            }
+            catch (error) {
                 console.log(error.message);
             }
         },

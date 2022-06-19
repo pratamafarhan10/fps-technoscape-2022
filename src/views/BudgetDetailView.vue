@@ -92,7 +92,9 @@
                                 </div>
                             </div>
                             <!-- end of pengeluaran/pemasukan -->
-
+                            <div>
+                                {{transaksi}}
+                            </div>
 
 
                         </div>
@@ -104,6 +106,21 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'BudgetDetailView',
+    data() {
+        return {
+            currentTab: 'pengeluaran',
+            transaksi: null,
+        }
+    },
+    created(){
+        this.transaksi = this.$route.params.transaksi;
+    }
+}
+</script>
 
 <style scoped>
 #riwayat-transaksi {
